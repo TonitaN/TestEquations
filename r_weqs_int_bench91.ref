@@ -1,0 +1,40 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> empty') ('As -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('Gs -> empty') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> empty') ('Gs -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('As -> empty') ('Gs -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> Gs As') ('As -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('As -> Gs As') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> Gs As') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> As Gs') ('Gs -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('Gs -> As Gs') ('Gs -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> As Gs') e.101) =  False;
+ (('As -> c As') ('As -> a As') e.101) =  False;
+ (('As -> c As') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

@@ -1,0 +1,63 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Cs -> empty') e.101) =  False;
+ (('As -> empty') e.101) =  <F593 e.101>;
+ (('As -> Cs As') e.101) =  False;
+ (('Cs -> As Cs') e.101) =  <F593 e.101>;
+ (e.101) =  False;
+}
+
+/*
+*  InputFormat: <F593 e.101 >
+*  OutputFormat: ==> s.2081 
+*/
+F593 {
+ ('Cs -> empty') e.101 =  False;
+ ('Bs -> empty') ('Cs -> empty') e.101 =  False;
+ ('Bs -> empty') ('Cs -> a Cs') ('Cs -> empty') e.101 =  False;
+ ('Bs -> empty') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') e.101 =  False;
+ ('Bs -> empty') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') e.101 =  False;
+ ('Bs -> empty') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') =  True;
+ ('Bs -> empty') e.101 =  False;
+ ('Bs -> Cs Bs') e.101 =  <F593 e.101>;
+ ('Cs -> Bs Cs') ('Cs -> empty') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> empty') =  True;
+ ('Cs -> Bs Cs') ('Cs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> empty') =  True;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> a Bs') ('Bs -> empty') =  True;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> a Bs') ('Bs -> empty') =  True;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') e.101 =  False;
+ ('Cs -> Bs Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> a Cs') ('Cs -> empty') ('Bs -> empty') =  True;
+ e.101 =  False;
+}
+
+****************************** The End ************************************

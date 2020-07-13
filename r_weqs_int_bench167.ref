@@ -1,0 +1,36 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> d Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> d Fs') ('Fs -> h Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> d Fs') ('Fs -> h Fs') ('Fs -> f Fs') ('Fs -> empty')) =  True;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> d Fs') ('Fs -> h Fs') ('Fs -> f Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> d Fs') ('Fs -> h Fs') ('Fs -> f Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> d Fs') ('Fs -> h Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') ('Fs -> d Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> g Fs') e.101) =  False;
+ (('Fs -> a Fs') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

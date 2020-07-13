@@ -1,0 +1,506 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> empty') e.101) =  False
+               ;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+    ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+    ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> empty')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs')
+    ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> empty')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs')
+    ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+      ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs')
+    ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs')
+    ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> b Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+      ('Bs -> d Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs')
+    ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs')
+    ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> empty')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> empty')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> e Fs') ('Fs -> empty')
+ ) =  True;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> e Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> e Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> c Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs') ('Fs -> d Fs')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') ('Fs -> h Fs')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Bs -> Fs Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> empty')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> empty')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> e Fs') ('Fs -> empty')
+ ) =  True;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> e Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs')
+      ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') ('Fs -> e Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') ('Fs -> h Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+    ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs')
+      ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs') ('Fs -> h Fs')
+      ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') ('Fs -> i Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') ('Fs -> h Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+    ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') ('Fs -> b Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') ('Fs -> i Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+    ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') ('Fs -> c Fs') ('Fs -> d Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') ('Fs -> h Fs') ('Fs -> c Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+    ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs') ('Fs -> f Fs')
+      ('Fs -> h Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs')
+      ('Fs -> f Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs')
+    ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs')
+      ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs') ('Fs -> d Fs')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') ('Fs -> h Fs')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs')
+    ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') ('Fs -> Bs Fs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs')
+    ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> e Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs')
+    ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') ('Bs -> g Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') ('Bs -> f Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') ('Bs -> d Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> c Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') ('Bs -> a Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') ('Bs -> g Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> c Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> d Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs') ('Bs -> b Bs')
+      ('Bs -> d Bs') ('Bs -> d Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs')
+    ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> b Bs') ('Bs -> d Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs')
+    ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs') ('Bs -> a Bs')
+      ('Bs -> b Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs')
+    ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+      ('Bs -> a Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs')
+    ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs') ('Bs -> g Bs')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') ('Bs -> e Bs')
+      e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs')
+    ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') ('Bs -> c Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') ('Bs -> g Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs')
+    ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> g Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs')
+    ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> c Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') ('Bs -> h Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs')
+    ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') ('Bs -> e Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+    ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') ('Bs -> h Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs')
+    ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') ('Bs -> a Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') ('Bs -> f Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs')
+    ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') ('Bs -> c Bs') e.101
+ ) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') ('Bs -> h Bs') e.101) =  False
+               ;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') ('Bs -> b Bs') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') ('Bs -> d Bs') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') ('Bs -> d Bs') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') ('Bs -> b Bs') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') ('Bs -> f Bs') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') ('Bs -> b Bs') e.101) =  False;
+ (('Bs -> e Bs') ('Bs -> h Bs') e.101) =  False;
+ (('Bs -> e Bs') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

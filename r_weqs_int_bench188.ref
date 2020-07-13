@@ -1,0 +1,44 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Es -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Fs -> empty') ('Cs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Fs -> empty') ('Cs -> e Cs') ('Cs -> empty')) =  True;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Fs -> empty') ('Cs -> e Cs') ('Cs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Fs -> empty') ('Cs -> e Cs') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Fs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Cs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Cs -> Fs Cs') ('Cs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Cs -> Fs Cs') ('Cs -> e Cs') ('Cs -> empty')) =  True;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Cs -> Fs Cs') ('Cs -> e Cs') ('Cs -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Cs -> Fs Cs') ('Cs -> e Cs') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Cs -> Fs Cs') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') ('Fs -> Cs Fs') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') ('Fs -> d Fs') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') ('Fs -> a Fs') e.101) =  False;
+ (('Es -> f Es') ('Es -> empty') e.101) =  False;
+ (('Es -> f Es') ('Es -> b Es') e.101) =  False;
+ (('Es -> f Es') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************
