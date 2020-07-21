@@ -1,7 +1,7 @@
+
 /*
-('c c d e g d e g e c d f b b f d g e e d c a Hs a f a c b d f a e e g d b a Js e a a c a Es g e f f f c c e c f d d c d d c b g f f c d a a g e b f e a f d d e d e g c d f e =
-  c c d e g d e g e c d f b b f d g e e d c a f a c a f a c b d f a e e g d b a Js e a a c a Es g e f f f c c e c f d d c d d c b g f f c d a a g e b f e a f d d e d e g c d f e')
-*/
+('c c c a b Gs b a a c b Gs b b As a c b c b b c c b b a a a c a b c a c a b =
+  c c c a b Gs b a a c b Gs b b c a Gs a c b c b b c c b b a a a c a b c a c a b')*/
 *$MST_FROM_ENTRY;
 
 *$MATCHING ForRepeatedSpecialization ;
@@ -21,15 +21,24 @@ $ENTRY Go {
 
 
 $ENTRY Go {
- (('Hs -> empty') e.101) =  False;
- (('Hs -> f Hs') ('Hs -> empty') e.101) =  False;
- (('Hs -> f Hs') ('Hs -> a Hs') ('Hs -> empty') e.101) =  False;
- (('Hs -> f Hs') ('Hs -> a Hs') ('Hs -> c Hs') ('Hs -> empty')) =  True;
- (('Hs -> f Hs') ('Hs -> a Hs') ('Hs -> c Hs') ('Hs -> empty') e.101) =  False;
- (('Hs -> f Hs') ('Hs -> a Hs') ('Hs -> c Hs') e.101) =  False;
- (('Hs -> f Hs') ('Hs -> a Hs') e.101) =  False;
- (('Hs -> f Hs') e.101) =  False;
+ (('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> empty') ('As -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('Gs -> empty') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> empty') ('Gs -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('As -> empty') ('Gs -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> Gs As') ('As -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('As -> Gs As') ('As -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('As -> Gs As') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> As Gs') ('Gs -> empty')) =  True;
+ (('As -> c As') ('As -> a As') ('Gs -> As Gs') ('Gs -> empty') e.101) =  False;
+ (('As -> c As') ('As -> a As') ('Gs -> As Gs') e.101) =  False;
+ (('As -> c As') ('As -> a As') e.101) =  False;
+ (('As -> c As') e.101) =  False;
  (e.101) =  False;
 }
 
 ****************************** The End ************************************
+

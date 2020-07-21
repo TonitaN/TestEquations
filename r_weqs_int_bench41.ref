@@ -1,0 +1,98 @@
+
+/*
+('a i j e b i b a d g b b b g e b h f j a i e e a g j f e e c e i b Fs g h j Es e d d h i f f c g b d i b g h e a c d i j b g i g h g a i i b h g a c h d j j =
+ a i j e b i b a d g b b b g e b h f j a i e e a g j f e e c e i b c f f j j f d b c i c i a e f i g h j Es e d d h i f f c g b d i b g h e a c d i j b g i g h g a i i b h g a c h d j j')
+*/
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> empty') e.101) =  False
+               ;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs')
+    ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs')
+    ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs')
+    ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs')
+    ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs')
+    ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs')
+    ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs')
+    ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> f Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs')
+    ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> f Fs') ('Fs -> i Fs') ('Fs -> empty')
+ ) =  True;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs')
+    ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> f Fs') ('Fs -> i Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs')
+    ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> f Fs') ('Fs -> i Fs') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs')
+    ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> f Fs') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs')
+    ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') ('Fs -> e Fs') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs')
+    ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> a Fs') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs')
+    ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') ('Fs -> i Fs') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs')
+    ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> i Fs') ('Fs -> c Fs') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs')
+    ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs') ('Fs -> i Fs') e.101
+ ) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs') ('Fs -> c Fs') e.101) =  False
+               ;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') ('Fs -> b Fs') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') ('Fs -> d Fs') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') ('Fs -> f Fs') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') ('Fs -> j Fs') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> j Fs') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') ('Fs -> f Fs') e.101) =  False;
+ (('Fs -> c Fs') ('Fs -> f Fs') e.101) =  False;
+ (('Fs -> c Fs') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************
+

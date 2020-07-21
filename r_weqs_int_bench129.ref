@@ -1,4 +1,5 @@
-/*('e a f b e b b f e e b f e c g f c = e a f b e b b As f e c g f c')
+
+/*('Es = Ms')
 */
 *$MST_FROM_ENTRY;
 
@@ -19,17 +20,20 @@ $ENTRY Go {
 
 
 $ENTRY Go {
- (('As -> empty') e.101) =  False;
- (('As -> f As') ('As -> empty') e.101) =  False;
- (('As -> f As') ('As -> e As') ('As -> empty') e.101) =  False;
- (('As -> f As') ('As -> e As') ('As -> e As') ('As -> empty') e.101) =  False;
- (('As -> f As') ('As -> e As') ('As -> e As') ('As -> b As') ('As -> empty')) =  True;
- (('As -> f As') ('As -> e As') ('As -> e As') ('As -> b As') ('As -> empty') e.101) =  False;
- (('As -> f As') ('As -> e As') ('As -> e As') ('As -> b As') e.101) =  False;
- (('As -> f As') ('As -> e As') ('As -> e As') e.101) =  False;
- (('As -> f As') ('As -> e As') e.101) =  False;
- (('As -> f As') e.101) =  False;
+ (('Ms -> empty') ('Es -> empty')) =  True;
+ (('Ms -> empty') ('Es -> empty') e.101) =  False;
+ (('Ms -> empty') e.101) =  False;
+ (('Es -> empty') ('Ms -> empty')) =  True;
+ (('Es -> empty') ('Ms -> empty') e.101) =  False;
+ (('Es -> empty') e.101) =  False;
+ (('Es -> Ms Es') ('Es -> empty')) =  True;
+ (('Es -> Ms Es') ('Es -> empty') e.101) =  False;
+ (('Es -> Ms Es') e.101) =  False;
+ (('Ms -> Es Ms') ('Ms -> empty')) =  True;
+ (('Ms -> Es Ms') ('Ms -> empty') e.101) =  False;
+ (('Ms -> Es Ms') e.101) =  False;
  (e.101) =  False;
 }
 
 ****************************** The End ************************************
+

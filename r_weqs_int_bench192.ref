@@ -1,4 +1,8 @@
-/*('Js = Ms')*/
+
+/*
+('Is Ms b d g h e h f c =
+ g b h f f Ms b d g h e h f c')
+*/
 *$MST_FROM_ENTRY;
 
 *$MATCHING ForRepeatedSpecialization ;
@@ -18,19 +22,20 @@ $ENTRY Go {
 
 
 $ENTRY Go {
- (('Ms -> empty') ('Js -> empty')) =  True;
- (('Ms -> empty') ('Js -> empty') e.101) =  False;
- (('Ms -> empty') e.101) =  False;
- (('Js -> empty') ('Ms -> empty')) =  True;
- (('Js -> empty') ('Ms -> empty') e.101) =  False;
- (('Js -> empty') e.101) =  False;
- (('Js -> Ms Js') ('Js -> empty')) =  True;
- (('Js -> Ms Js') ('Js -> empty') e.101) =  False;
- (('Js -> Ms Js') e.101) =  False;
- (('Ms -> Js Ms') ('Ms -> empty')) =  True;
- (('Ms -> Js Ms') ('Ms -> empty') e.101) =  False;
- (('Ms -> Js Ms') e.101) =  False;
+ (('Is -> empty') e.101) =  False;
+ (('Is -> g Is') ('Is -> empty') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> empty') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> h Is') ('Is -> empty') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> h Is') ('Is -> f Is') ('Is -> empty') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> h Is') ('Is -> f Is') ('Is -> f Is') ('Is -> empty')) =  True;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> h Is') ('Is -> f Is') ('Is -> f Is') ('Is -> empty') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> h Is') ('Is -> f Is') ('Is -> f Is') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> h Is') ('Is -> f Is') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') ('Is -> h Is') e.101) =  False;
+ (('Is -> g Is') ('Is -> b Is') e.101) =  False;
+ (('Is -> g Is') e.101) =  False;
  (e.101) =  False;
 }
 
 ****************************** The End ************************************
+
