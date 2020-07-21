@@ -1,0 +1,58 @@
+/* ('Ns = Gs Ms') */
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Gs -> empty') ('Ms -> empty') ('Ns -> empty')) =  True;
+ (('Gs -> empty') ('Ms -> empty') ('Ns -> empty') e.101) =  False;
+ (('Gs -> empty') ('Ms -> empty') e.101) =  False;
+ (('Gs -> empty') ('Ns -> empty') ('Ms -> empty')) =  True;
+ (('Gs -> empty') ('Ns -> empty') ('Ms -> empty') e.101) =  False;
+ (('Gs -> empty') ('Ns -> empty') e.101) =  False;
+ (('Gs -> empty') ('Ns -> Ms Ns') ('Ns -> empty')) =  True;
+ (('Gs -> empty') ('Ns -> Ms Ns') ('Ns -> empty') e.101) =  False;
+ (('Gs -> empty') ('Ns -> Ms Ns') e.101) =  False;
+ (('Gs -> empty') ('Ms -> Ns Ms') ('Ms -> empty')) =  True;
+ (('Gs -> empty') ('Ms -> Ns Ms') ('Ms -> empty') e.101) =  False;
+ (('Gs -> empty') ('Ms -> Ns Ms') e.101) =  False;
+ (('Gs -> empty') e.101) =  False;
+ (('Ns -> empty') ('Gs -> empty') ('Ms -> empty')) =  True;
+ (('Ns -> empty') ('Gs -> empty') ('Ms -> empty') e.101) =  False;
+ (('Ns -> empty') ('Gs -> empty') e.101) =  False;
+ (('Ns -> empty') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ms -> empty') ('Ns -> empty')) =  True;
+ (('Ns -> Gs Ns') ('Ms -> empty') ('Ns -> empty') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ms -> empty') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ns -> empty') ('Ms -> empty')) =  True;
+ (('Ns -> Gs Ns') ('Ns -> empty') ('Ms -> empty') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ns -> empty') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ns -> Ms Ns') ('Ns -> empty')) =  True;
+ (('Ns -> Gs Ns') ('Ns -> Ms Ns') ('Ns -> empty') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ns -> Ms Ns') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ms -> Ns Ms') ('Ms -> empty')) =  True;
+ (('Ns -> Gs Ns') ('Ms -> Ns Ms') ('Ms -> empty') e.101) =  False;
+ (('Ns -> Gs Ns') ('Ms -> Ns Ms') e.101) =  False;
+ (('Ns -> Gs Ns') e.101) =  False;
+ (('Gs -> Ns Gs') ('Gs -> empty') ('Ms -> empty')) =  True;
+ (('Gs -> Ns Gs') ('Gs -> empty') ('Ms -> empty') e.101) =  False;
+ (('Gs -> Ns Gs') ('Gs -> empty') e.101) =  False;
+ (('Gs -> Ns Gs') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

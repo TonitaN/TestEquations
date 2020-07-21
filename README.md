@@ -1,6 +1,6 @@
-This repository presents results of the specialization of the word equations interpreter WECount by equations given in https://www.informatik.uni-kiel.de/~mku/woorpje/files/track01.tar.gz (the description of the track is given in https://www.informatik.uni-kiel.de/~mku/woorpje/#_first_track).
+This repository presents results of the specialization of the word equations interpreter WECount by equations given as a benchmark for the solver Woorpje, download [here](https://www.informatik.uni-kiel.de/~mku/woorpje/files/track01.tar.gz). The description of the equations in the track is given [here](https://www.informatik.uni-kiel.de/~mku/woorpje/#_first_track).
 
-The interpreter source code is weqs_int_bench_task.ref, where the input equation is to be replaced by the one to be solved.
+The interpreter source code is [weqs_int_bench_task.ref](https://github.com/TonitaN/TestEquations/blob/master/weqs_int_bench_task.ref), where the input equation is to be replaced by the one to be solved.
 
 
 The equations are encoded as follows.
