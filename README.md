@@ -6,39 +6,36 @@ The interpreter source code is [weqs_int_bench_task.ref](https://github.com/Toni
 
 The equations are encoded as follows.
 
-Variables are encoded as As, Bs, ...., Xs.
-
-Letters (constant symbols) are encoded as a, b,...,x.
++ Variables are encoded as `As`, `Bs`, ...., `Xs`.
++ Letters (constant symbols) are encoded as `a`, `b`,...,`x`.
 
 Residual programs that correspond to equations with no solutions contain the single rule:
 
-$ENTRY Go {
+`$ENTRY Go {`
 
-(e.101) = False;
+`(e.101) = False;`
 
-}
+`}`
 
 The other residual programs model graphs of all solutions of the corresponding equations.
 
 The paths in graphs contain the following labels:
 
-('Xs -> empty') --- variable Xs has the value the empty string;
++ `('Xs -> empty')` --- variable `Xs` has the value the empty string;
++ `('Xs -> Ys Xs')` --- variable `Xs` has the prefix `Ys`;
++ `('Xs -> a Xs')` --- variable `Xs` starts by the letter `a`.
 
-('Xs -> Ys Xs') --- variable Xs has the prefix Ys;
+Say, given the path `('Xs -> a Xs')('Xs -> Ys Xs')('Xs -> empty')` it models the solution `Xs = a Ys`.
 
-('Xs -> a Xs') --- variable Xs starts by the letter a.
+The overall results of the verification are given in the table below. If _'Has Solutions'_ is '!' then the equation is solvable but the timeout occurred.
 
-Say, given the path ('Xs -> a Xs')('Xs -> Ys Xs')('Xs -> empty') it models the solution Xs = a Ys.
+_Solutions type_ is 0 if the solutions are unions of patterns (the solution graph is a tree); is marked as regular if the solution graph contains loops, but these loops generate regular expressions; and is marked as non-regular if the solution graph contains some other loops.
 
-The overall results of the verification are given in the table below. If 'Has Solutions' is '!' then the equation is solvable but the timeout occurred.
-
-Solutions type is 0 if the solutions are unions of patterns (the solution graph is a tree); is marked as regular if the solution graph contains loops, but these loops generate regular expressions; and is marked as non-regular if the solution graph contains some other loops.
-
-All the equations are classified in their reduced form. E.g. the equation As Bs = As As counts as acyclic, because the two occurrences of As are reduced.
+All the equations are classified in their reduced form. E.g. the equation `As Bs = As As` counts as acyclic, because the two occurrences of `As` are reduced.
 
 Acyclic equations which are not quadratic have the sides with the empty intersection of the variables and are linear with respect to one side.
 
-For example, the equation As As As = Bs a Cs is acyclic, however it is not quadratic.
+For example, the equation `As As As = Bs a Cs` is acyclic, however it is not quadratic.
 
 Equation Id | Acyclic | Quadratic | 1-Variable | Solved | Has Solutions | Solutions Type |
 ---------|---------|-------|-----|-----|----|-----|
