@@ -27,9 +27,9 @@ The paths in graphs contain the following labels:
 
 Say, given the path `('Xs -> a Xs')('Xs -> Ys Xs')('Xs -> empty')` it models the solution `Xs = a Ys`.
 
-The overall results of the verification are given in the table below. If _'Has Solutions'_ is '!' then the equation is solvable but the timeout occurred.
+The overall results of the verification are given in the table below. If __'Has Solutions'__ is '!' then the equation is solvable but the timeout occurred.
 
-_Solutions type_ is 0 if the solutions are unions of patterns (the solution graph is a tree); is marked as regular if the solution graph contains loops, but these loops generate regular expressions; and is marked as non-regular if the solution graph contains some other loops.
+__Solutions type__ is 0 if the solutions are unions of patterns (the solution graph is a tree); is 'regular' if the solution graph contains loops, but these loops generate regular expressions; and is 'non-regular' if the solution graph contains some other loops.
 
 All the equations are classified in their reduced form. E.g. the equation `As Bs = As As` counts as acyclic, because the two occurrences of `As` are reduced.
 
