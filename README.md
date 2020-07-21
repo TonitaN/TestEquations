@@ -40,7 +40,7 @@ Acyclic equations which are not quadratic have the sides with the empty intersec
 
 For example, the equation As As As = Bs a Cs is acyclic, however it is not quadratic.
 
-Equation Id | Acyclic | Quadratic | 1-Variable | Solved | Has Solutions | Solutions Char |
+Equation Id | Acyclic | Quadratic | 1-Variable | Solved | Has Solutions | Solutions Type |
 ---------|---------|-------|-----|-----|----|-----|
 Equation 1   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 2   |  -  |  -  |  -  |  +  |  +  |  regular  |
@@ -241,3 +241,4 @@ Equation 196   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 197   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 198   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 199   |  -  |  -  |  -  |  -  |  ?  |  ?  |
+Equation 200   |  +  |  +  |  -  |  +  |  +  |  0  |
