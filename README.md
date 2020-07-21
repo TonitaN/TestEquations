@@ -74,7 +74,7 @@ Equation 32   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 33   |  +  |  +  |  -  |  !  |  ?  |  ?  |
 Equation 34   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 35   |  +  |  +  |  -  |  !  |  ?  |  ?  |
-Equation 36   |  -  |  +  |  -  |  +  |  +  |  0  |
+Equation 36   |  -  |  +  |  -  |  +  |  +  |  non-regular  |
 Equation 37   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 38   |  +  |  +  |  -  |  +  |  +  |  0  |
 Equation 39   |  +  |  +  |  -  |  +  |  +  |  0  |
