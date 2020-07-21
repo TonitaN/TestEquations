@@ -1,0 +1,303 @@
+*$MST_FROM_ENTRY;
+*$MATCHING ForRepeatedSpecialization;
+*$STRATEGY Applicative;
+
+$ENTRY Go
+{ (e.Rules) =
+ <Eq (e.Rules) <Sim ( ) <Decode (<Conc 
+('As =' /*The left-hand side of the equation followed by = and enclosed in '.*/)
+' Cs' /*The right-hand side of the equation.*/
+>)>>>;
+}
+
+/* Auxiliary function concatenating too long input strings.*/
+Conc {(e.1) e.2 = e.1 e.2;}
+
+Const__ { e.x = e.x;}
+
+/* Decoding to the internal format of the interpreter. */
+Decode {
+	(e.Left'='e.Right) = ((<Translate e.Left>)(<Translate e.Right>));
+}
+
+/* All the possible variable names. */
+Variables {
+	= 'QWERTYUIOPASDFGHJKLZXCVBNM';
+}
+
+/* All the possible constants. */
+Alphabet {
+	= 'qwertyuiopasdfghjklzxcvbnm'; 
+}
+
+IfInSet {
+	s.Term (s.Term e.Rest) = 'T';
+	s.Term ( ) = 'F';
+	s.Term (s.OtherTerm e.Rest) = <IfInSet s.Term (e.Rest)>;
+}
+
+Translate {
+	/* EMPTY */ = /* EMPTY */;
+	' 'e.x = <Translate e.x>;
+	e.x' ' = <Translate e.x>;
+	Started (e.Result) 'TF'(e.variables)(e.alphabet)s.Name's'
+		= e.Result (var 'e' s.Name);
+	Started (e.Result) 'TF'(e.variables)(e.alphabet)s.Name
+		=  e.Result (var 's' s.Name);
+	Started (e.Result)'FT'(e.variables)(e.alphabet)s.Name
+		= e.Result s.Name;
+	Started (e.Result)'TF'(e.variables)(e.alphabet)s.Name's ' s.Next e.Rest
+		= <Translate Started (e.Result (var 'e' s.Name))
+			<IfInSet s.Next(e.variables)><IfInSet s.Next(e.alphabet)>(e.variables)(e.alphabet) s.Next e.Rest>;
+	Started (e.Result)'TF'(e.variables)(e.alphabet)s.Name' 's.Next e.Rest
+		= <Translate Started (e.Result (var 's' s.Name))
+			<IfInSet s.Next(e.variables)><IfInSet s.Next(e.alphabet)>(e.variables)(e.alphabet)s.Next e.Rest>;
+	Started (e.Result)'FT'(e.variables)(e.alphabet)s.Name' 's.Next e.Rest
+		= <Translate Started (e.Result s.Name)
+			<IfInSet s.Next(e.variables)><IfInSet s.Next(e.alphabet)>(e.variables)(e.alphabet)s.Next e.Rest>;
+	s.Term e.Rest = <Translate Started ( ) 
+		<IfInSet s.Term(<Variables>)><IfInSet s.Term(<Alphabet>)>
+		(<Variables>)(<Alphabet>) s.Term e.Rest>;
+}
+
+Eq {
+	(/* EMPTY */)((/*EMPTY*/)(/*EMPTY*/)) = True;
+	(e.Rules)((/*EMPTY*/)(/*EMPTY*/)) e.Other = <Eq (e.Rules) e.Other>;
+	((s.x's -> empty') e.R1)((e.LHS)((var 'e' s.x) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(/* EMPTY */))e.Other>
+		>>;
+	((s.x's -> empty') e.R1)(((var 'e' s.x) e.LHS)(e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(/* EMPTY */))e.Other>
+		>>;
+
+	((s.x's -> 's.Sym' 's.x's') e.R1)(((var 'e' s.x) e.LHS)(s.Sym e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))((var 'e' s.x))(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))e.Other>
+		>>;
+	((s.x's -> 's.Sym' 's.x's') e.R1)((s.Sym e.LHS)((var 'e' s.x) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))((var 'e' s.x))(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))e.Other>
+		>>;
+	((s.x's -> 's.y's 's.x's') e.R1)(((var 'e' s.x) e.LHS)((var 'e' s.y) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (/* EMPTY */)
+			((<subst (assign (var 'e' s.x)((var 'e' s.y) (var 'e' s.x)))((var 'e' s.x))(e.LHS)>)
+			(<subst (assign (var 'e' s.x)((var 'e' s.y) (var 'e' s.x)))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)((var 'e' s.y)(var 'e' s.x)))e.Other>
+		>>;
+	((s.y's -> 's.x's 's.y's') e.R1)(((var 'e' s.x) e.LHS)((var 'e' s.y) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (/* EMPTY */)
+			((<subst (assign (var 'e' s.y)((var 'e' s.x)(var 'e' s.y)))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.y)((var 'e' s.x) (var 'e' s.y)))((var 'e' s.y))(e.RHS)>))
+			<subst_2 (assign (var 'e' s.y)((var 'e' s.x)(var 'e' s.y)))e.Other>
+		>>;
+	(e.R1)e.Other = False;
+}
+
+
+subst {
+	(assign t.var (e.val))(e.Result) (/*EMPTY*/) = e.Result;
+	(assign (var s.type s.n) (e.val))(e.Result) ((var s.type s.n) e.Rest) = <subst (assign (var s.type s.n) (e.val))(e.Result <Const__ e.val>) (e.Rest)>;
+	(assign t.var (e.val))(e.Result) (t.other e.Rest) = <subst (assign t.var (e.val))(e.Result t.other) (e.Rest)>;
+}
+
+subst_2 {
+	t.Asg ((e.LHS)(e.RHS)) e.Other
+		= ((<subst t.Asg (/* EMPTY */) (e.LHS)>)(<subst t.Asg (/* EMPTY */) (e.RHS)>))
+		<subst_2 t.Asg e.Other>;
+	t.Asg /* EMPTY */ = /* EMPTY */;
+}	
+
+Sim {
+	(e.Processed)((s.x e.LHS)(s.x e.RHS)) e.Other = <Sim (e.Processed)((e.LHS)(e.RHS)) e.Other>;
+	(e.Processed)((e.LHS s.x)(e.RHS s.x)) e.Other = <Sim (e.Processed)((e.LHS)(e.RHS)) e.Other>;
+	(e.Processed)(((var s.type s.n) e.LHS)((var s.type s.n) e.RHS)) e.Other = <Sim (e.Processed)((e.LHS)(e.RHS)) e.Other>;
+	(e.Processed)((e.LHS (var s.type s.n))(e.RHS (var s.type s.n))) e.Other = <Sim (e.Processed) ((e.LHS)(e.RHS)) e.Other>;
+	(e.Processed)((/* EMPTY */)(/* EMPTY */)) e.Other = <Sim (e.Processed ((/* EMPTY */)(/* EMPTY */))) e.Other>;
+	(e.Processed)((s.x e.LHS)(s.y e.RHS)) e.Other = ((s.x)(s.y));
+	(e.Processed)((e.LHS s.x)(e.RHS s.y)) e.Other = ((s.x)(s.y));
+	(e.Processed)((e.x)(e.y)) e.Other = 
+		<Sim (e.Processed <Split 
+			(/* EMPTY */) 
+			'N'
+			((Const ))((Const ))
+			((/* EMPTY */)(/* EMPTY */))
+			((e.x)(e.y)) 
+		>) e.Other>;
+	(e.Processed)/* EMPTY */ = <SortContr (/* EMPTY */) e.Processed>;
+}
+
+SortContr {
+	(e.Processed)((s.x)(s.y)) e.Other = ((s.x)(s.y));
+	(e.Processed)(e.NormalEq) e.Other = <SortContr (e.Processed (e.NormalEq)) e.Other>;
+	(e.Processed) /* EMPTY */ = e.Processed;
+}
+
+Sim2 {
+	((s.x e.LHS)(s.x e.RHS)) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+	((e.LHS s.x)(e.RHS s.x)) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+	(((var s.type s.n) e.LHS)((var s.type s.n) e.RHS)) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+	((e.LHS (var s.type s.n))(e.RHS (var s.type s.n))) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+	((/* EMPTY */)(/* EMPTY */)) e.Other = ((/* EMPTY */)(/* EMPTY */)) <Sim2 e.Other>;
+	((s.x e.LHS)(s.y e.RHS)) e.Other = ((s.x)(s.y));
+	((e.LHS s.x)(e.RHS s.y)) e.Other = ((s.x)(s.y));
+	((e.x)(e.y)) e.Other = ((e.x)(e.y))<Sim2 e.Other>;
+	/* EMPTY */ = /* EMPTY */;
+}
+
+Split {
+	(e.Result)'N'(e.MS1)(e.MS2)((e.LPref)(e.RPref))((t.L1 e.LHS)(t.R1 e.RHS))
+		= <Split 
+			(e.Result)
+			<CountMS <Include t.L1 (/* EMPTY */)(e.MS1)><Include t.R1 (/* EMPTY */)(e.MS2)>>
+			((e.LPref t.L1)(e.RPref t.R1))
+			((e.LHS)(e.RHS))
+		>;
+	(e.Result)'F'(e.MS1)(e.MS2)((e.LPref)(e.RPref))((t.L1 e.LHS)(t.R1 e.RHS))
+		= <Split 
+			(e.Result)
+			<CountMS <Include t.L1 (/* EMPTY */)(e.MS1)><Include t.R1 (/* EMPTY */)(e.MS2)>>
+			((e.LPref t.L1)(e.RPref t.R1))
+			((e.LHS)(e.RHS))
+		>;
+	(e.Result)'T'(e.MS1)(e.MS2)((e.LPref)(e.RPref))((e.LHS)(e.RHS))
+		= <Split
+			(e.Result ((e.LPref)(e.RPref)))
+			'N'
+			((Const ))((Const ))
+			((/* EMPTY */)(/* EMPTY */))
+			((e.LHS)(e.RHS))
+		>;
+	(e.Result)s.Log(e.MS1)(e.MS2)((/* EMPTY */)(/* EMPTY */))((/* EMPTY */)(/* EMPTY */))
+		= e.Result;
+	(e.Result)s.Log(e.MS1)(e.MS2)((e.LPref)(e.RPref))((e.LHS)(e.RHS))
+		= <SplitRight 
+			(e.Result)
+			'N'((Const ))((Const ))
+			((/* EMPTY */)(/* EMPTY */))
+			<Sim2 ((e.LPref e.LHS)(e.RPref e.RHS))>>;
+}
+
+Include {
+	s.Sym (e.Prev)(e.MS (Const e.Counter)) = (e.Prev e.MS (Const e.Counter'I'));
+	(var 'e' s.name)(e.Prev)(((var 'e' s.name) e.Counter) e.Rest)
+		= (e.Prev ((var 'e' s.name) e.Counter'I') e.Rest);
+	(var 'e' s.name)(e.Prev)(t.Other e.MS) = <Include (var 'e' s.name)(e.Prev t.Other)(e.MS)>;
+	(var 'e' s.name)(e.Prev)(/* EMPTY */) = (((var 'e' s.name) 'I') e.Prev);
+}
+
+CountMS {
+	(t.1 e.M1) (e.M2) = <AreEqual (e.M1)(<ElMinus t.1 (/* EMPTY */)(e.M2)>)> (t.1 e.M1) (e.M2);
+}
+
+AreEqual {
+	(e.M1)(e.M2 FALSE) = 'F';
+	(/* EMPTY */)(/* EMPTY */) = 'T';
+	(/* EMPTY */)(e.Other) = 'F';
+	(e.Other)(/* EMPTY */) = 'F';
+	(t.1 e.M1)(e.M2) = <AreEqual (e.M1)(<ElMinus t.1 (/* EMPTY */)(e.M2)>)>;
+	
+}
+
+ElMinus {
+	(Const e.Counter) (/* EMPTY */)(e.Rest (Const e.Counter2))
+		= e.Rest <CountMinus Const (e.Counter)(e.Counter2)>;
+	((var 'e' s.name) e.Counter) (e.Rest)(((var 'e' s.name) e.Counter2) e.Next)
+		= e.Rest e.Next <CountMinus (var 'e' s.name)(e.Counter)(e.Counter2)>;
+	t.El (e.Rest)(t.Other e.Next)
+		= <ElMinus t.El (e.Rest t.Other)(e.Next)>;
+	t.El (e.Rest)(/* EMPTY */) = e.Rest GREATER FALSE;
+}
+
+CountMinus {
+	t.Name (/* EMPTY */)(/* EMPTY */) = /* EMPTY */;
+	t.Name (s.C e.Other)(s.C e.Other2) = <CountMinus t.Name (e.Other)(e.Other2)>;
+	t.Name (/* EMPTY */)(e.Number) = LESSER FALSE;
+	t.Name (e.Number)(/* EMPTY */) = GREATER FALSE;
+}
+
+SplitRight {
+  (e.Result)'N'(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS t.LL)(e.RHS t.RL))
+	= <SplitRight 
+		(e.Result)
+		<CountMS 
+			<Include t.LL (/* EMPTY */)(e.MS1)>
+			<Include t.RL (/* EMPTY */)(e.MS2)>
+		>
+		((t.LL e.LSuff)(t.RL e.RSuff))
+		((e.LHS)(e.RHS))
+	>;
+  (e.Result)'F'(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS t.LL)(e.RHS t.RL))
+	= <SplitRight 
+		(e.Result)
+		<CountMS 
+			<Include t.LL (/* EMPTY */)(e.MS1)>
+			<Include t.RL (/* EMPTY */)(e.MS2)>
+		>
+		((t.LL e.LSuff)(t.RL e.RSuff))
+		((e.LHS)(e.RHS))
+	>;
+  (e.Result)'T'(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS)(e.RHS))
+	= <SplitRight
+		(e.Result ((e.LSuff)(e.RSuff)))
+		'N'
+		((Const ))((Const ))
+		((/* EMPTY */)(/* EMPTY */))
+		((e.LHS)(e.RHS))
+	>;
+  (e.Result)s.Log(e.MS1)(e.MS2)((/* EMPTY */)(/* EMPTY */))((/* EMPTY */)(/* EMPTY */))
+		= e.Result;
+  (e.Result)s.Log(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS)(e.RHS))
+	= <SubjugateEq 
+		<YieldCheckSubMS 
+			(<AddElsToMS (e.LHS)(e.MS1)>)
+			(<AddElsToMS (e.RHS)(e.MS2)>)
+		>
+		<Sim2 ((e.LHS e.LSuff)(e.RHS e.RSuff))>
+	> 
+	e.Result;
+}
+
+SubjugateEq {
+	False ((e.Eq1)(e.Eq2)) = ((e.Eq1)(e.Eq2));
+	True ((e.Eq1)(e.Eq2)) = (('A')('B'));
+}
+
+SubtractMS {
+	GREATER (e.MS1)(/* EMPTY */) = True;
+	LESSER (/* EMPTY */)(e.MS2) = True;
+	GREATER (t.El e.MS1)(e.MS2) = <CheckInfo GREATER (<ElMinus t.El (/* EMPTY */)(e.MS2)>)(e.MS1)>;
+	LESSER (t.El e.MS1)(e.MS2) = <CheckInfo LESSER (<ElMinus t.El (/* EMPTY */)(e.MS2)>)(e.MS1)>;
+	t.Other (e.MS1)(e.MS2) = False;
+}
+
+CheckInfo {
+	s.Log (e.MS2 s.Log FALSE)(e.MS1) = <SubtractMS s.Log (e.MS1)(e.MS2)>;
+	GREATER (e.MS2 LESSER FALSE)(e.MS1) = <SubtractMS NONCOMP (e.MS1)(e.MS2)>;
+	LESSER (e.MS2 GREATER FALSE)(e.MS1) = <SubtractMS NONCOMP (e.MS1)(e.MS2)>;
+	s.Marker (e.MS2)(e.MS1) = <SubtractMS s.Marker (e.MS1)(e.MS2)>;
+}
+
+YieldCheckSubMS2 {
+	/* EMPTY */ (e.MS1)(e.MS2) = False;
+	s.Cmp FALSE (e.MS1)(e.MS2) = <SubtractMS s.Cmp (e.MS1)(e.MS2)>;
+}
+
+YieldCheckSubMS {
+	(e.MS1 t.Const1)(e.MS2 t.Const2)
+		= <YieldCheckSubMS2 <ElMinus t.Const1 (/* EMPTY */)(t.Const2)>(e.MS1)(e.MS2)>;
+}
+
+AddElsToMS {
+	(t.El e.Other)(e.MS) = <AddElsToMS (e.Other) <Include t.El(/* EMPTY */)(e.MS)>>;
+	(/* EMPTY */)(e.MS) = e.MS;
+}
