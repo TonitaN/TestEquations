@@ -230,7 +230,7 @@ Equation 174  |    -    |     -     |      -     |    -   |       ?       |     
 Equation 175  |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 176  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 177  |    +    |     +     |      -     |    +   |       +       |       0        |
-Equation 178  |    +    |     -     |      -     |    !   |       ?       |       ?        |
+Equation 178  |    +    |     -     |      -     |    +   |       +       |       0        |
 Equation 179  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 180  |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 181  |    +    |     +     |      -     |    +   |       +       |       0        |
