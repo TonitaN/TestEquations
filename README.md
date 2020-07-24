@@ -105,14 +105,14 @@ Equation 49   |    +    |     +     |      +     |    +   |       +       |     
 Equation 50   |    -    |     -     |      -     |    -   |       ?       |       ?        |
 Equation 51   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 52   |    +    |     +     |      +     |    +   |       +       |       0        |
-Equation 53   |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 53   |    -    |     -     |      -     |    !   |       ?       |       0        |
 Equation 54   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 55   |    -    |     -     |      -     |    +   |       +       |    regular     |
 Equation 56   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 57   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 58   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 59   |    +    |     +     |      -     |    +   |       +       |       0        |
-Equation 60   |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 60   |    -    |     -     |      -     |    !   |       ?       |       0        |
 Equation 61   |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 62   |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 63   |    +    |     +     |      -     |    +   |       +       |       0        |
@@ -121,7 +121,7 @@ Equation 65   |    +    |     +     |      -     |    +   |       +       |     
 Equation 66   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 67   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 68   |    +    |     +     |      +     |    +   |       +       |       0        |
-Equation 69   |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 69   |    -    |     -     |      -     |    +   |       ?       |       0        |
 Equation 70   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 71   |    -    |     -     |      -     |    -   |       ?       |       ?        |
 Equation 72   |    +    |     +     |      -     |    +   |       +       |       0        |
@@ -134,7 +134,7 @@ Equation 78   |    +    |     +     |      +     |    +   |       +       |     
 Equation 79   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 80   |    -    |     -     |      -     |    +   |       +       |   non-regular  |
 Equation 81   |    +    |     +     |      -     |    +   |       +       |       0        |
-Equation 82   |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 82   |    -    |     -     |      -     |    !   |       ?       |       0        |
 Equation 83   |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 84   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 85   |    +    |     -     |      -     |    +   |       +       |       0        |
@@ -175,7 +175,7 @@ Equation 119  |    +    |     +     |      -     |    +   |       +       |     
 Equation 120  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 121  |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 122  |    +    |     -     |      -     |    +   |       +       |       0        |
-Equation 123  |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 123  |    -    |     -     |      -     |    !   |       ?       |       0        |
 Equation 124  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 125  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 126  |    +    |     +     |      -     |    +   |       +       |       0        |
@@ -211,10 +211,10 @@ Equation 155  |    +    |     +     |      +     |    +   |       +       |     
 Equation 156  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 157  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 158  |    -    |     -     |      +     |    +   |       +       |       0        |
-Equation 159  |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 159  |    -    |     -     |      -     |    !   |       ?       |       0        |
 Equation 160  |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 161  |    +    |     +     |      -     |    +   |       +       |       0        |
-Equation 162  |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 162  |    -    |     -     |      -     |    !   |       ?       |       0        |
 Equation 163  |    -    |     -     |      -     |    -   |       ?       |       ?        |
 Equation 164  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 165  |    +    |     +     |      -     |    +   |       +       |       0        |
@@ -243,7 +243,7 @@ Equation 187  |    -    |     -     |      -     |    +   |       +       |    r
 Equation 188  |    -    |     -     |      -     |    +   |       +       |       0        |
 Equation 189  |    -    |     -     |      -     |    +   |       +       |       0        |
 Equation 190  |    +    |     +     |      -     |    +   |       +       |       0        |
-Equation 191  |    -    |     -     |      -     |    +   |       -       |       0        |
+Equation 191  |    -    |     -     |      -     |    !   |       ?       |       0        |
 Equation 192  |    +    |     +     |      +     |    +   |       +       |       0        |
 Equation 193  |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 194  |    -    |     -     |      -     |    -   |       ?       |       ?        |
