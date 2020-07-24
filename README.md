@@ -69,7 +69,7 @@ Equation 13   |    +    |     +     |      -     |    +   |       +       |     
 Equation 14   |    -    |     +     |      -     |    +   |       +       |   non-regular  |
 Equation 15   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 16   |    -    |     -     |      -     |    +   |       +       |       0        |
-Equation 17   |    -    |     +     |      -     |    !   |       ?       |       ?        |
+Equation 17   |    -    |     +     |      -     |    +   |       +       |   non-regular  |
 Equation 18   |    +    |     -     |      -     |    +   |       +       |       0        |
 Equation 19   |    +    |     +     |      -     |    +   |       +       |       0        |
 Equation 20   |    -    |     -     |      +     |    +   |       +       |       0        |
