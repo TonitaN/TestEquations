@@ -1,0 +1,77 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Cs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') ('Hs -> a Hs') ('Hs -> empty') e.101) =  <F12077 e.101>;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') ('Hs -> a Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') ('Hs -> d Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') ('Hs -> b Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') ('Hs -> empty') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') ('Hs -> a Hs') ('Hs -> empty') e.101) =  <F12077 e.101>;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') ('Hs -> a Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') ('Hs -> a Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') ('Hs -> c Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') ('Hs -> d Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') ('Hs -> b Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Hs -> Cs Hs') e.101) =  False;
+ (('Cs -> c Cs') ('Cs -> Hs Cs') e.101) =  False;
+ (('Cs -> c Cs') e.101) =  False;
+ (e.101) =  False;
+}
+
+/*
+*  InputFormat: <F12077 e.101 >
+*  OutputFormat: ==> s.2598 
+*/
+F12077 {
+ ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> empty') =  True;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> e Ds') ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> e Ds') ('Ds -> a Ds') ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> e Ds') ('Ds -> a Ds') ('Ds -> c Ds') ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> e Ds') ('Ds -> a Ds') ('Ds -> c Ds') ('Ds -> d Ds') ('Ds -> empty') e.101 =  False
+               ;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> e Ds') ('Ds -> a Ds') ('Ds -> c Ds') ('Ds -> d Ds') ('Ds -> d Ds') ('Ds -> empty')
+      e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> e Ds') ('Ds -> a Ds') ('Ds -> c Ds') ('Ds -> d Ds') ('Ds -> d Ds') ('Ds -> e Ds')
+      ('Ds -> empty') e.101 =  False;
+ ('Ds -> d Ds') ('Ds -> e Ds') ('Ds -> e Ds') ('Ds -> b Ds') ('Ds -> e Ds') ('Ds -> a Ds') ('Ds -> c Ds') ('Ds -> d Ds') ('Ds -> d Ds') ('Ds -> e Ds')
+      ('Ds -> e Ds') e.101 =  <F12077 e.101>;
+ e.101 =  False;
+}
+
+****************************** The End ************************************

@@ -1,0 +1,107 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Bs -> empty') e.101) =  False;
+ (('Bs -> b Bs') ('Bs -> empty') e.101) =  False;
+ (('Bs -> b Bs') ('Bs -> f Bs') e.101) =  <F11676 e.101>;
+ (('Bs -> b Bs') e.101) =  False;
+ (e.101) =  False;
+}
+
+/*
+*  InputFormat: <F11676 e.101 >
+*  OutputFormat: ==> s.7492 
+*/
+F11676 {
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> empty') e.101 =  False
+               ;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> empty')
+      e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> e As')
+      ('As -> empty') =  True;
+ ('Fs -> empty') ('Bs -> empty') ('Is -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> empty') e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> empty') e.101 =  False
+               ;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> empty')
+      e.101 =  False;
+ ('Fs -> empty') ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> e As')
+      ('As -> empty') =  True;
+ ('Fs -> empty') e.101 =  False;
+ ('Bs -> empty') ('Is -> empty') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> empty') e.101 =  False
+               ;
+ ('Bs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> e As') ('As -> empty')
+      =  True;
+ ('Bs -> empty') ('Is -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> Is As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> empty') e.101 =  False;
+ ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> empty') e.101 =  False
+               ;
+ ('Bs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> e As') ('As -> empty')
+      =  True;
+ ('Bs -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> empty') e.101 =  False
+               ;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> empty') e.101 =  False
+               ;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> empty') e.101 =  False
+               ;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> e As') ('As -> empty') =  True;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('Is -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> empty') e.101 =  False;
+ ('Bs -> Fs Bs') ('Bs -> empty') ('Fs -> empty') ('As -> Is As') ('As -> b As') ('As -> b As') ('As -> c As') ('As -> f As') ('As -> a As') ('As -> d As') ('As -> e As') ('As -> empty') =  True;
+ ('Bs -> Fs Bs') e.101 =  False;
+ ('Fs -> Bs Fs') e.101 =  <F11676 e.101>;
+ e.101 =  False;
+}
+
+****************************** The End ************************************

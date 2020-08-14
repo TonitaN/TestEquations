@@ -1,0 +1,294 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> empty') e.101) =  False
+               ;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs')
+    ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs')
+    ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs')
+    ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs')
+    ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> empty')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> empty')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is')
+      ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> b Is') ('Is -> d Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') ('Is -> b Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') ('Is -> b Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> b Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is')
+      ('Is -> f Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') ('Is -> c Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') ('Is -> b Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs')
+    ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs')
+    ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Fs -> Is Fs') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> empty')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> empty')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is')
+      ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> b Is') ('Is -> d Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') ('Is -> b Is') ('Is -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') ('Is -> b Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> b Is') ('Is -> d Is') ('Is -> e Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is')
+    ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is') ('Is -> e Is')
+      ('Is -> b Is') ('Is -> d Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') ('Is -> b Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is')
+    ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is') ('Is -> f Is')
+      ('Is -> e Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is')
+      ('Is -> f Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs')
+    ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is') ('Is -> e Is')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') ('Is -> d Is')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs')
+    ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') ('Is -> d Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') ('Is -> a Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs')
+    ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') ('Is -> e Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') ('Is -> c Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs')
+    ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') ('Is -> c Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') ('Is -> c Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs')
+    ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') ('Is -> b Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs')
+    ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') ('Is -> Fs Is') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs')
+    ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') ('Fs -> e Fs') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs')
+    ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') ('Fs -> a Fs') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs')
+    ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') ('Fs -> e Fs') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') ('Fs -> d Fs') e.101) =  False
+               ;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') ('Fs -> e Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> c Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') ('Fs -> f Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') ('Fs -> f Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> f Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> b Fs') e.101) =  False;
+ (('Fs -> a Fs') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

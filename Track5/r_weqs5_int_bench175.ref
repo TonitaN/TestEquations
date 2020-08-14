@@ -1,0 +1,61 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Is -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> empty') e.101) =  False
+               ;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> empty') e.101) =  False
+               ;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> e Es') ('Es -> empty')) =  True;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> e Es') ('Es -> empty') e.101) =  False
+               ;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> e Es') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') ('As -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') ('As -> a As') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') ('As -> f As') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('Js -> As Js') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> e Es') ('Es -> empty')) =  True;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> e Es') ('Es -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') ('Es -> e Es') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') ('As -> empty') ('Es -> a Es') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') ('As -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') ('As -> a As') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') ('As -> f As') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') ('As -> Js As') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') ('Js -> d Js') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> empty') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') ('Is -> b Is') e.101) =  False;
+ (('Is -> a Is') ('Is -> d Is') e.101) =  False;
+ (('Is -> a Is') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

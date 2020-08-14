@@ -1,0 +1,40 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Es -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> b Is') ('Is -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> b Is') ('Is -> e Is') ('Is -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> b Is') ('Is -> e Is') ('Is -> c Is') ('Is -> empty')) =  True;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> b Is') ('Is -> e Is') ('Is -> c Is') ('Is -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> b Is') ('Is -> e Is') ('Is -> c Is') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> b Is') ('Is -> e Is') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') ('Is -> b Is') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') ('Is -> f Is') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') ('Is -> e Is') e.101) =  False;
+ (('Es -> b Es') ('Es -> empty') e.101) =  False;
+ (('Es -> b Es') ('Es -> e Es') e.101) =  False;
+ (('Es -> b Es') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

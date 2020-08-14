@@ -1,0 +1,304 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> empty') e.101) =  False
+               ;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty')
+ ) =  True;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> Js Bs') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty')
+ ) =  True;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') e.101) =  False
+               ;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') ('Js -> e Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') ('Js -> a Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Fs -> Js Fs') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> empty') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> empty') e.101) =  False
+               ;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') ('Fs -> empty')
+ ) =  True;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') ('Fs -> empty')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') ('Fs -> b Fs')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Bs -> Js Bs') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') ('Fs -> empty')
+ ) =  True;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') ('Fs -> empty')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') ('Fs -> b Fs')
+      e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') ('Js -> empty') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') ('Js -> d Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') ('Js -> f Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') ('Js -> e Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js')
+    ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') ('Js -> b Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') ('Js -> Bs Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js')
+    ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') ('Js -> d Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') ('Js -> c Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js')
+    ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') ('Js -> c Js') e.101
+ ) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') ('Js -> e Js') e.101) =  False
+               ;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') ('Js -> c Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') ('Js -> c Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') ('Js -> f Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') ('Js -> e Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') ('Js -> a Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') ('Js -> Fs Js') e.101) =  False;
+ (('Fs -> a Fs') ('Fs -> c Fs') e.101) =  False;
+ (('Fs -> a Fs') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

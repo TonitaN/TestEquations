@@ -1,0 +1,28 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Hs -> empty') e.101) =  False;
+ (('Hs -> c Hs') ('Hs -> empty') e.101) =  False;
+ (('Hs -> c Hs') ('Hs -> d Hs') e.101) =  False;
+ (('Hs -> c Hs') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************

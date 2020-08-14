@@ -1,0 +1,58 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ (('Is -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> empty') ('Ds -> empty') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> empty') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> empty') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty')) =  True;
+ (('Is -> f Is') ('Is -> empty') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> empty') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Is -> empty') ('Ds -> empty') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Is -> empty') ('Ds -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> empty') ('Is -> empty') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> empty') ('Is -> empty') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> empty') ('Is -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty')) =  True;
+ (('Is -> f Is') ('Ds -> empty') ('Is -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> empty') ('Is -> empty') ('Gs -> b Gs') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Ds -> empty') ('Is -> empty') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Ds -> empty') ('Is -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> Is Ds') ('Ds -> empty') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> Is Ds') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> Is Ds') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty')) =  True;
+ (('Is -> f Is') ('Ds -> Is Ds') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> Is Ds') ('Ds -> empty') ('Gs -> b Gs') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Ds -> Is Ds') ('Ds -> empty') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Ds -> Is Ds') ('Ds -> empty') e.101) =  False;
+ (('Is -> f Is') ('Ds -> Is Ds') e.101) =  False;
+ (('Is -> f Is') ('Is -> Ds Is') ('Is -> empty') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> Ds Is') ('Is -> empty') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> Ds Is') ('Is -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty')) =  True;
+ (('Is -> f Is') ('Is -> Ds Is') ('Is -> empty') ('Gs -> b Gs') ('Gs -> b Gs') ('Gs -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> Ds Is') ('Is -> empty') ('Gs -> b Gs') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Is -> Ds Is') ('Is -> empty') ('Gs -> b Gs') e.101) =  False;
+ (('Is -> f Is') ('Is -> Ds Is') ('Is -> empty') e.101) =  False;
+ (('Is -> f Is') ('Is -> Ds Is') e.101) =  False;
+ (('Is -> f Is') e.101) =  False;
+ (e.101) =  False;
+}
+
+****************************** The End ************************************
