@@ -3,6 +3,8 @@ interpreter WECount by equations given as a benchmark for the solver Woorpje,
 download [here][track01.tar.gz].
 The description of the equations in the track is given [here][_first_track].
 
+The results of specialization of equation systems given in Track 5 are presented [here][_5TrackMe]; the readme file is given [here][_5ReadMe].
+
 The interpreter source code is [weqs_int_bench_task.ref](weqs_int_bench_task.ref),
 where the input equation is to be replaced by the one to be solved.
 
@@ -256,3 +258,5 @@ Equation 200  |    +    |     +     |      -     |    +   |       +       |     
 
 [track01.tar.gz]: https://www.informatik.uni-kiel.de/~mku/woorpje/files/track01.tar.gz
 [_first_track]: https://www.informatik.uni-kiel.de/~mku/woorpje/#_first_track
+[_5TrackMe]: https://github.com/TonitaN/TestEquations/tree/master/Track5
+[_5ReadMe]: https://github.com/TonitaN/TestEquations/blob/master/Track5/README.md
