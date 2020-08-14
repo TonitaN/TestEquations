@@ -1,9 +1,7 @@
-This repository presents results of the specialization of the word equations
+This readme file presents results of the specialization of the word equations
 interpreter WECount by equations given as a benchmark for the solver Woorpje,
 download [here][track01.tar.gz].
 The description of the equations in the track is given [here][_first_track].
-
-The results of specialization of equation systems given in Track 5 are presented [here][_5TrackMe]; the readme file is given [here][_5ReadMe].
 
 The interpreter source code is [weqs_int_bench_task.ref](weqs_int_bench_task.ref),
 where the input equation is to be replaced by the one to be solved.
@@ -13,17 +11,9 @@ The equations are encoded as follows.
 + Variables are encoded as `As`, `Bs`, ...., `Xs`.
 + Letters (constant symbols) are encoded as `a`, `b`,...,`x`.
 
-Residual programs that correspond to equations with no solutions contain
-the single rule:
+The residual programs modelling the set of the equations' solutions are given [here][_1TrackMe].
 
-```
-$ENTRY Go {
-  (e.101) = False;
-}
-```
-
-The other residual programs model graphs of all solutions of the corresponding
-equations.
+The results of specialization of equation systems given in Track 5 are presented [here][_5TrackMe]; the readme file is given [here][_5ReadMe].
 
 The paths in graphs contain the following labels:
 
@@ -258,5 +248,6 @@ Equation 200  |    +    |     +     |      -     |    +   |       +       |     
 
 [track01.tar.gz]: https://www.informatik.uni-kiel.de/~mku/woorpje/files/track01.tar.gz
 [_first_track]: https://www.informatik.uni-kiel.de/~mku/woorpje/#_first_track
+[_1TrackMe]: https://github.com/TonitaN/TestEquations/tree/master/Track1
 [_5TrackMe]: https://github.com/TonitaN/TestEquations/tree/master/Track5
 [_5ReadMe]: https://github.com/TonitaN/TestEquations/blob/master/Track5/README.md
