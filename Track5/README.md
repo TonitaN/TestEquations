@@ -1,6 +1,6 @@
 The analysis of the Track 5 for the string constraint solver woorpje (download [here][track05.tar.gz], the description of the track is [here][_fifth_track]).
 
-20 equations out of the 180 solved in total are considered as unsatisfiable.
+200 systems each consisting of three equations are given. 20 equations out of the 180 solved in total are considered by the specialization algorithm as unsatisfiable.
 
 System Id    | Acyclic | Quadratic | 1-Variable | Solved  | Has Solutions | Solutions Type |
 -------------|---------|-----------|------------|---------|---------------|----------------|
