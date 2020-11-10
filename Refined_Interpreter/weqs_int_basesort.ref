@@ -1,0 +1,636 @@
+*$MST_FROM_ENTRY;
+*$MATCHING ForRepeatedSpecialization;
+*$STRATEGY Applicative;
+
+$ENTRY Go
+{ e.Rules =
+<Eq (e.Rules) <Sim ('Q')(  )
+  <Decode (<Conc ('d e c f e f b a Fs f d a f a e Fs a f b Fs Bs b c Bs a d e b b c f a c e f c Bs =')
+    ' d e Fs f e f b a c f d Es Fs Bs b Fs Bs a d e b b c f a Fs e f c b b'>)>
+  <Decode (<Conc ('f b d e b e b b a c d e a a f e b b b d e e a a c a d c e d e d a f a e e a f b =')
+    ' f b d e b e Bs a Fs d e a a f e Bs b d e e a a c a d c e d e d a f a e e a f b'>)>
+  <Decode (<Conc ('e a Fs d f e f Fs d b b Fs f f c e e e b e b c f e f f d f f f b a c f f e Fs a c f =')
+    ' e a c d f e f Fs d Bs c f f c e e e b e b c f e f f d f f f b a Fs f f e c a Fs f'>)>>>;
+}
+
+Conc {(e.1) e.2 = e.1 e.2;}
+
+Const__ { e.x = e.x;}
+
+/* Главная функция перекодировки уравнения из пользовательского формата во внутренний формат интерпретатора. */
+Decode {
+	(e.Left'='e.Right) = ((<Translate e.Left>)(<Translate e.Right>));
+}
+
+/* Список всех литералов, которые могут выступать в качестве имен переменных. */
+Variables {
+	= 'QWERTYUIOPASDFGHJKLZXCVBNM';
+}
+
+/* Список всех литералов, которые могут выступать в качестве букв алфавита констант. */
+Alphabet {
+	= 'qwertyuiopasdfghjklzxcvbnm'; 
+}
+
+IfInSet {
+	s.Term (s.Term e.Rest) = 'T';
+	s.Term ( ) = 'F';
+	s.Term (s.OtherTerm e.Rest) = <IfInSet s.Term (e.Rest)>;
+}
+
+Translate {
+	/* EMPTY */ = /* EMPTY */;
+	' 'e.x = <Translate e.x>;
+	e.x' ' = <Translate e.x>;
+	Started (e.Result) 'TF'(e.variables)(e.alphabet)s.Name's'
+		= e.Result (var 'e' s.Name);
+	Started (e.Result) 'TF'(e.variables)(e.alphabet)s.Name
+		=  e.Result (var 's' s.Name);
+	Started (e.Result)'FT'(e.variables)(e.alphabet)s.Name
+		= e.Result s.Name;
+	Started (e.Result)'TF'(e.variables)(e.alphabet)s.Name's ' s.Next e.Rest
+		= <Translate Started (e.Result (var 'e' s.Name))
+			<IfInSet s.Next(e.variables)><IfInSet s.Next(e.alphabet)>(e.variables)(e.alphabet) s.Next e.Rest>;
+	Started (e.Result)'TF'(e.variables)(e.alphabet)s.Name' 's.Next e.Rest
+		= <Translate Started (e.Result (var 's' s.Name))
+			<IfInSet s.Next(e.variables)><IfInSet s.Next(e.alphabet)>(e.variables)(e.alphabet)s.Next e.Rest>;
+	Started (e.Result)'FT'(e.variables)(e.alphabet)s.Name' 's.Next e.Rest
+		= <Translate Started (e.Result s.Name)
+			<IfInSet s.Next(e.variables)><IfInSet s.Next(e.alphabet)>(e.variables)(e.alphabet)s.Next e.Rest>;
+	s.Term e.Rest = <Translate Started ( ) 
+		<IfInSet s.Term(<Variables>)><IfInSet s.Term(<Alphabet>)>
+		(<Variables>)(<Alphabet>) s.Term e.Rest>;
+}
+
+/*
+Функция Eq осуществляет развертку системы уравнений согласно заданному пути и имеет входной формат: (#e.Rules)((e.LHS)(e.RHS))e.Equations. 
+Параметр e.Rules – путь по дереву решений системы уравнений, 
+  e.LHS и e.RHS – левая и правая части уравнения e.LHS = e.RHS имеют одинаковый синтаксис;
+  e.LHS ::= Symbol e.LHS || (var 'e' s.Name) e.LHS || EMPTY 
+  e.Equations ::= ((e.LHS)(e.RHS)) || EMPTY
+*/
+Eq {
+/* 1а. Если обе части единственного в списке уравнения пусты, получено тривиальное тождество и развертка завершается. 
+  Считаем, что список правил, которые нужно применить к этому тождеству, также пуст. */
+	(/* EMPTY */)(Recommended e.Z)(s.VarName)((/*EMPTY*/)(/*EMPTY*/)) = True;
+/* 1б. Если обе части очередного в списке уравнения пусты, переходим к развертке следующего уравнения в списке. */
+	(e.Rules)(Recommended e.Z)(s.VarName)((/*EMPTY*/)(/*EMPTY*/)) e.Other = <Eq (e.Rules)(Recommended e.Z)(s.VarName) e.Other>;
+	((s.x's -> empty') e.R1)(Recommended (s.x's -> empty')e.OtherRec)(s.VarName) e.Eqs
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			<subst_2 (assign (var 'e' s.x)(/* EMPTY */))e.Eqs>
+		>>;
+	((s.x's -> 's.x's 's.Sym) e.R1)(Recommended (s.x's -> 's.x's 's.Sym'VAR')e.OtherRec)(s.VarName) e.Eqs
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			<subst_2 (assign (var 'e' s.x)((var 'e' s.x)(var 's' s.Sym)))e.Eqs>
+		>>;
+	((s.x's -> 's.x's 's.Sym) e.R1)(Recommended (s.x's -> 's.x's 's.Sym)e.OtherRec)(s.VarName) e.Eqs
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			<subst_2 (assign (var 'e' s.x)((var 'e' s.x)s.Sym))e.Eqs>
+		>>;
+	((s.x's -> 's.y' 's.x's') e.R1)(Recommended (s.x's -> 's.y'VAR 's.x's')e.OtherRec)(s.VarName) e.Eqs
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			<subst_2 (assign (var 'e' s.x)((var 's' s.y)(var 'e' s.x)))e.Eqs>
+		>>;
+	((s.x's -> 's.x's 's.y's') e.R1)(Recommended (s.x's -> 's.x's 's.y's')e.OtherRec)(s.VarName) e.Eqs
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			<subst_2 (assign (var 'e' s.x)((var 'e' s.x)(var 'e' s.y)))e.Eqs>
+		>>;
+/* 2а+4a+6a. Какова бы ни была правая часть уравнения, если левая начинается с е-переменной x, и правило преобразования есть x -> empty,
+  тогда строим присваивание этой переменной значения, равного пустой строке, и осуществляем подстановку данного присваивания. */	
+	((s.x's -> empty') e.R1)(Recommended)(s.VarName)((e.LHS)((var 'e' s.x) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(/* EMPTY */))e.Other>
+		>>;
+/* 2б+4б+6б. Какова бы ни была левая часть уравнения, если правая начинается с е-переменной x, и правило преобразования есть x -> empty, 
+  тогда строим присваивание этой переменной значения, равного пустой строке, и осуществляем подстановку данного присваивания. */	
+	((s.x's -> empty') e.R1)(Recommended)(s.VarName)(((var 'e' s.x) e.LHS)(e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(/* EMPTY */))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(/* EMPTY */))e.Other>
+		>>;
+/* 3a. Если левая часть уравнения начинается с e-переменной x, а правая – с буквы s.Sym, 
+  и правило преобразования есть x -> s.Sym x, осуществляем подстановку x := s.Sym++x. 
+  После этого вызываем функцию упрощения уравнений (Sim). */
+	((s.x' -> 's.Sym) e.R1)(Recommended)(s.VarName)(((var 's' s.x) e.LHS)(s.Sym e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 's' s.x)(s.Sym))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 's' s.x)(s.Sym))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 's' s.x)(s.Sym))e.Other>
+		>>;
+/* 3a. Если левая часть уравнения начинается с e-переменной x, а правая – с буквы s.Sym, 
+  и правило преобразования есть x -> s.Sym x, осуществляем подстановку x := s.Sym++x. 
+  После этого вызываем функцию упрощения уравнений (Sim). */
+	((s.x' -> 's.y) e.R1)(Recommended)(s.VarName)(((var 's' s.y) e.LHS)((var 's' s.x) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 's' s.x)((var 's' s.y)))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 's' s.x)((var 's' s.y)))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 's' s.x)((var 's' s.y)))e.Other>
+		>>;
+/* 3a. Если левая часть уравнения начинается с e-переменной x, а правая – с буквы s.Sym, 
+  и правило преобразования есть x -> s.Sym x, осуществляем подстановку x := s.Sym++x. 
+  После этого вызываем функцию упрощения уравнений (Sim). */
+	((s.x's -> 's.Sym' 's.x's') e.R1)(Recommended)(s.VarName)(((var 'e' s.x) e.LHS)(s.Sym e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))((var 'e' s.x))(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))e.Other>
+		>>;
+/* 3б. Если правая часть уравнения начинается с e-переменной x, а левая – с буквы s.Sym, 
+  и правило преобразования есть x -> s.Sym x, осуществляем подстановку x := s.Sym++x. 
+  После этого вызываем функцию упрощения уравнений (Sim). */
+	((s.x's -> 's.Sym' 's.x's') e.R1)(Recommended)(s.VarName)((s.Sym e.LHS)((var 'e' s.x) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))((var 'e' s.x))(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)(s.Sym (var 'e' s.x)))e.Other>
+		>>;
+/* 3a. Если левая часть уравнения начинается с e-переменной x, а правая – с буквы s.Sym, 
+  и правило преобразования есть x -> s.Sym x, осуществляем подстановку x := s.Sym++x. 
+  После этого вызываем функцию упрощения уравнений (Sim). */
+	((s.x's -> 's.y' 's.x's') e.R1)(Recommended)(s.VarName)(((var 'e' s.x) e.LHS)((var 's' s.y) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.x)((var 's' s.y) (var 'e' s.x)))((var 'e' s.x))(e.LHS)>)
+			(<subst (assign (var 'e' s.x)((var 's' s.y) (var 'e' s.x)))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)((var 's' s.y) (var 'e' s.x)))e.Other>
+		>>;
+/* 3б. Если правая часть уравнения начинается с e-переменной x, а левая – с буквы s.Sym, 
+  и правило преобразования есть x -> s.Sym x, осуществляем подстановку x := s.Sym++x. 
+  После этого вызываем функцию упрощения уравнений (Sim). */
+	((s.x's -> 's.y' 's.x's') e.R1)(Recommended)(s.VarName)(((var 's' s.y) e.LHS)((var 'e' s.x) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.x)((var 's' s.y) (var 'e' s.x)))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.x)((var 's' s.y) (var 'e' s.x)))((var 'e' s.x))(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)((var 's' s.y) (var 'e' s.x)))e.Other>
+		>>;
+/* 5a. Если левая часть уравнения начинается с переменной x, а правая – с переменной y, и правило преобразования есть x -> y x, 
+  осуществляем подстановку x:= y++x. После этого вызываем функцию упрощения уравнений. */
+	((s.x's -> 's.y's 's.x's') e.R1)(Recommended)(s.VarName)(((var 'e' s.x) e.LHS)((var 'e' s.y) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.x)((var 'e' s.y) (var 'e' s.x)))((var 'e' s.x))(e.LHS)>)
+			(<subst (assign (var 'e' s.x)((var 'e' s.y) (var 'e' s.x)))(/*EMPTY*/)(e.RHS)>))
+			<subst_2 (assign (var 'e' s.x)((var 'e' s.y)(var 'e' s.x)))e.Other>
+		>>;
+/* 5б. Если левая часть уравнения начинается с переменной x, а правая – с переменной y, и правило преобразования есть y -> x y, 
+  осуществляем подстановку y:= x++y. После этого вызываем функцию упрощения уравнений. */
+	((s.y's -> 's.x's 's.y's') e.R1)(Recommended)(s.VarName)(((var 'e' s.x) e.LHS)((var 'e' s.y) e.RHS)) e.Other
+		= <Eq (e.R1) <Sim (s.VarName)(/* EMPTY */)
+			((<subst (assign (var 'e' s.y)((var 'e' s.x)(var 'e' s.y)))(/*EMPTY*/)(e.LHS)>)
+			(<subst (assign (var 'e' s.y)((var 'e' s.x) (var 'e' s.y)))((var 'e' s.y))(e.RHS)>))
+			<subst_2 (assign (var 'e' s.y)((var 'e' s.x)(var 'e' s.y)))e.Other>
+		>>;
+/* 7. Во всех прочих случаях считаем, что шаг решения уравнения невозможен. */
+	(e.R1)e.Other = False;
+}
+
+
+/* Функция подстановки в выражение имеет входной формат:
+   (assign (var s.name) (e.Val))(e.Result)(e.StringToSubstituteIn).
+   Реализована хвостовой рекурсией: накапливает строку после подстановки в аргументе e.Result и возвращает ее всю целиком. */
+subst {
+	(assign t.var (e.val))(e.Result) (/*EMPTY*/) = e.Result;
+/* Нижеследующее правило запрещает обобщение констант, появившихся в уравнении в результате подстановки, посредством применения
+  псевдофункции Const__. */
+	(assign (var s.type s.n) (e.val))(e.Result) ((var s.type s.n) e.Rest) = <subst (assign (var s.type s.n) (e.val))(e.Result <Const__ e.val>) (e.Rest)>;
+/* Правило подстановки, не накладывающее запрет на обобщение. */
+*	(assign (var s.type s.n) (e.val))(e.Result) ((var s.type s.n) e.Rest) = <subst (assign (var s.type s.n) (e.val))(e.Result e.val) (e.Rest)>;
+	(assign t.var (e.val))(e.Result) (t.other e.Rest) = <subst (assign t.var (e.val))(e.Result t.other) (e.Rest)>;
+}
+
+/* Функция вызова подстановки ко всем левым и правым частям уравнений в системе. 
+ Входной формат:   (assign (var s.name) (e.Val)) e.Equations,
+где e.Equations либо пусто, либо начинается с уравнения вида ((e.LHS)(e.RHS)). */
+subst_2 {
+	t.Asg ((e.LHS)(e.RHS)) e.Other
+		= ((<subst t.Asg (/* EMPTY */) (e.LHS)>)(<subst t.Asg (/* EMPTY */) (e.RHS)>))
+		<subst_2 t.Asg e.Other>;
+	t.Asg (assign e.asg) e.Other = (assign e.asg)<subst_2 t.Asg e.Other>;
+	t.Asg /* EMPTY */ = /* EMPTY */;
+}	
+
+/* Модифицированная функция упрощения удаляет одинаковые термы с левой и правой стороны уравнения. Имеет входной формат ((e.LHS)(e.RHS))^*. */
+Sim {
+  /* 1a-left. Удаление одинаковых букв слева и справа. */
+	(s.VarName)(e.Processed)((s.x e.LHS)(s.x e.RHS)) e.Other = <Sim (s.VarName)(e.Processed)((e.LHS)(e.RHS)) e.Other>;
+  /* 1a-right. Удаление одинаковых букв слева и справа. */
+	(s.VarName)(e.Processed)((e.LHS s.x)(e.RHS s.x)) e.Other = <Sim (s.VarName)(e.Processed)((e.LHS)(e.RHS)) e.Other>;
+  /* 1б-left. Удаление одинаковых переменных. */
+	(s.VarName)(e.Processed)(((var s.type s.n) e.LHS)((var s.type s.n) e.RHS)) e.Other = <Sim (s.VarName)(e.Processed)((e.LHS)(e.RHS)) e.Other>;
+  /* 1б-right. Удаление одинаковых переменных. */
+	(s.VarName)(e.Processed)((e.LHS (var s.type s.n))(e.RHS (var s.type s.n))) e.Other = <Sim (s.VarName)(e.Processed) ((e.LHS)(e.RHS)) e.Other>;
+  /* 2а. Уравнение преобразовано к тривиальному тождеству: возвращаем это тождество и упрощаем остальные уравнения в системе. */
+	(s.VarName)(e.Processed)((/* EMPTY */)(/* EMPTY */)) e.Other = <Sim (s.VarName)(e.Processed ((/* EMPTY */)(/* EMPTY */))) e.Other>;
+  /* 2б-left. Уравнение преобразовано к тривиальному противоречию (поскольку предложение 2б находится ниже, чем 1а-left, 
+  то s.x не совпадает с s.y): возвращаем противоречивое уравнение и удаляем все остальные уравнения из системы. */
+	(s.VarName)(e.Processed)((s.x e.LHS)(s.y e.RHS)) e.Other = (s.VarName)((s.x)(s.y));
+  /* 2б-right. Уравнение преобразовано к тривиальному противоречию (поскольку предложение 2б находится ниже, чем 1а-left, 
+  то s.x не совпадает с s.y): возвращаем противоречивое уравнение и удаляем все остальные уравнения из системы. */
+	(s.VarName)(e.Processed)((e.LHS s.x)(e.RHS s.y)) e.Other = (s.VarName)((s.x)(s.y));
+  /* 3. Уравнение не преобразовано к тривиальному противоречию, и сокращать больше нечего: 
+  пытаемся расщепить это уравнение и упрощаем остальные уравнения системы. */
+	(s.VarName)(e.Processed)((e.x)(e.y)) e.Other = 
+		<Sim (s.VarName)(e.Processed <Split 
+			(/* EMPTY */) /* уравнения – результаты расщепления */
+			'N' /* текущее состояние разбиения – неопределенное */
+			((Const ))((Const )) /* мультимножества букв и переменных частей уравнения пусты */
+			((/* EMPTY */)(/* EMPTY */)) /* отщепляемые префиксы тоже пусты */
+			((e.x)(e.y)) /* суффиксы совпадают со сторонами уравнения */
+		>) e.Other>;
+  /* 4. Упрощать больше нечего – заканчиваем работу. */
+	(s.VarName)(e.Processed)/* EMPTY */ = <SortContr (s.VarName)(/* EMPTY */)(/* EMPTY */) e.Processed>;
+}
+
+SortContr {
+	(s.VarName)(e.Processed)(e.RecAsgs)((s.x)(s.y)) e.Other = (Recommended)(s.VarName)((s.x)(s.y));
+	(s.VarName)(e.Processed)(e.RecAsgs)(assign contradiction) e.Other = (Recommended)(s.VarName)(('A')('B'));
+	(s.VarName)(e.Processed)(e.RecAsgs)(((var 's' s.n1))(s.Sym)) e.Other = <SortContr (s.VarName)((((var 's' s.n1))(s.Sym)) e.Processed)(e.RecAsgs) e.Other>;
+	(s.VarName)(e.Processed)(e.RecAsgs)((s.Sym)((var 's' s.n1))) e.Other = <SortContr (s.VarName)((((var 's' s.n1))(s.Sym)) e.Processed)(e.RecAsgs) e.Other>;
+	(s.VarName)(e.Processed)(e.RecAsgs)(((var 's' s.n1))((var 's' s.n2))) e.Other = <SortContr (s.VarName)((((var 's' s.n1))((var 's' s.n2))) e.Processed)(e.RecAsgs) e.Other>;
+	(s.VarName)(e.Processed)(e.RecAsgs)(assign (var 'e' s.n) (/* EMPTY */)) e.Other
+		= <SortContr (s.VarName)(e.Processed)((s.n's -> empty') e.RecAsgs) e.Other>;
+	(s.VarName)(e.Processed)(/* EMPTY */)(assign (var 'e' s.n) ((var 'e' s.n) s.Sym)) e.Other
+		= <SortContr (s.VarName)(e.Processed)((s.n's -> 's.n's 's.Sym))e.Other>;
+	(s.VarName)(e.Processed)(/* EMPTY */)(assign (var 'e' s.n) ((var 'e' s.n) (var 's' s.m))) e.Other
+		= <SortContr (s.VarName)(e.Processed)((s.n's -> 's.n's 's.n'VAR'))e.Other>;
+	(s.VarName)(e.Processed)(/* EMPTY */)(assign (var 'e' s.n) ((var 'e' s.n)(var 'e' s.m))) e.Other
+		= <SortContr (s.VarName)(e.Processed)((s.n's -> 's.n's 's.m's'))e.Other>;
+	(s.VarName)(e.Processed)(/* EMPTY */)(assign (var 'e' s.n) ('I'e.Num)) e.Other
+		= <SortContr (<NextVar (<Variables>)s.VarName>)(e.Processed)((s.n's -> 's.VarName'VAR 's.n's'))e.Other>;
+	(s.VarName)(e.Processed)((s.x's -> 's.x's'e.Z))(assign (var 'e' s.n) ('I'e.Num)) e.Other
+		= <SortContr (<NextVar (<Variables>)s.VarName>)(e.Processed)((s.n's -> 's.VarName'VAR 's.n's'))e.Other>;
+	(s.VarName)(e.Processed)(e.RecAsgs)(assign e.NotRelevant) e.Other = <SortContr (s.VarName)(e.Processed)(e.RecAsgs) e.Other>;
+	(s.VarName)(e.Processed)(e.RecAsgs)(e.NormalEq) e.Other = <SortContr (s.VarName)(e.Processed (e.NormalEq))(e.RecAsgs) e.Other>;
+	(s.VarName)(e.Processed)(e.RecAsgs) /* EMPTY */ = (Recommended e.RecAsgs)(s.VarName)e.Processed;
+}
+
+SortAssignments {
+	(e.Processed)(e.Eqs)(assign (var 'e' s.name)(/* EMPTY */))e.ToProcess
+		= <SortAssignments (e.Processed (assign (var 'e' s.name)(/* EMPTY */)))(e.Eqs)e.ToProcess>;
+	(e.Processed)(e.Eqs)(assign contradiction) e.ToProcess
+		= (('A')('B'))(/* EMPTY */);
+	(e.Processed)(e.Eqs)(assign e.Otherasg) e.ToProcess
+		= <SortAssignments (e.Processed)(e.Eqs) e.ToProcess>;
+	(e.Processed)(e.Eqs)((e.LHS)(e.RHS)) e.ToProcess
+		= <SortAssignments (e.Processed)(e.Eqs ((e.LHS)(e.RHS))) e.ToProcess>;
+	(e.Processed)(e.Eqs)/* EMPTY */ = e.Eqs (e.Processed);
+}
+
+SubstituteMany {
+	e.Eqs (/* EMPTY */) = e.Eqs;
+	e.Eqs (t.asg e.Rest) = <SubstituteMany <subst_2 t.asg e.Eqs> (e.Rest)>;
+}
+
+ProceedSort {
+	(assign t.var (e.Data (s.Name))) e.Equations = <SortContr (s.Name)(/* EMPTY */)<subst_2 (assign t.var (e.Data))e.Equations>>;
+}
+
+/* Модифицированная функция упрощения удаляет одинаковые термы с левой и правой стороны уравнения. Имеет входной формат ((e.LHS)(e.RHS))^*. */
+Sim2 {
+  /* 1a-left. Удаление одинаковых букв слева и справа. */
+	((s.x e.LHS)(s.x e.RHS)) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+  /* 1a-right. Удаление одинаковых букв слева и справа. */
+	((e.LHS s.x)(e.RHS s.x)) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+  /* 1б-left. Удаление одинаковых переменных. */
+	(((var s.type s.n) e.LHS)((var s.type s.n) e.RHS)) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+  /* 1б-right. Удаление одинаковых переменных. */
+	((e.LHS (var s.type s.n))(e.RHS (var s.type s.n))) e.Other = <Sim2 ((e.LHS)(e.RHS)) e.Other>;
+  /* 2а. Уравнение преобразовано к тривиальному тождеству: возвращаем это тождество и упрощаем остальные уравнения в системе. */
+	((/* EMPTY */)(/* EMPTY */)) e.Other = ((/* EMPTY */)(/* EMPTY */)) <Sim2 e.Other>;
+  /* 2б-left. Уравнение преобразовано к тривиальному противоречию (поскольку предложение 2б находится ниже, чем 1а-left, 
+  то s.x не совпадает с s.y): возвращаем противоречивое уравнение и удаляем все остальные уравнения из системы. */
+	((s.x e.LHS)(s.y e.RHS)) e.Other = ((s.x)(s.y));
+  /* 2б-right. Уравнение преобразовано к тривиальному противоречию (поскольку предложение 2б находится ниже, чем 1а-left, 
+  то s.x не совпадает с s.y): возвращаем противоречивое уравнение и удаляем все остальные уравнения из системы. */
+	((e.LHS s.x)(e.RHS s.y)) e.Other = ((s.x)(s.y));
+  /* 3. Уравнение не преобразовано к тривиальному противоречию, и сокращать больше нечего: 
+  пытаемся расщепить это уравнение и упрощаем остальные уравнения системы. */
+	((e.x)(e.y)) e.Other = ((e.x)(e.y))
+	<Sim2 e.Other>;
+  /* 4. Упрощать больше нечего – заканчиваем работу. */
+	/* EMPTY */ = /* EMPTY */;
+}
+
+/* Функция расщепления уравнения в словах по равносоставленности частей.
+    Расщепление делается только слева! 
+   Входной формат функции:
+   (e.Result) s.Log (e.LmultiSet)(e.RmultiSet)((e.Lpref)(e.Rpref))((e.LHSRest)(e.RHSRest)),
+    где:
+           e.Result – список уравнений, уже отделенных от исходного;
+           s.Log :: = 'N' | 'T' | 'F'   – статус текущего расщепления, где 
+                                           'N' – статус не определен, 'T' – расщепление корректно, 'F' – некорректно;
+          (e.Lmultiset) и (e.Rmultiset) – мультимножества переменных и букв, входящих в слова e.Lpref и e.Rpref соответственно;
+          e.Lpref и e.Rpref – префиксы левой и правой сторон уравнения, которые проверяются на равносоставленность. Всегда (по построению) состоят из одинакового числа термов.
+          e.LHSRest и e.RHSRest – остатки левой и правой сторон уравнения.
+*/
+Split {
+  /* 1а. Статус расщепления не определен (очередное отделение термов слева и справа уравнения еще не сделано), но осталось еще хотя бы по одному терму слева и справа уравнения. 
+  Присоединяем соответствующие термы справа к префиксам и включаем их в мультимножества элементов префиксов. После чего проверяем эти мультимножества на совпадение – вызываем
+  функцию CountMS. */
+	(e.Result)'N'(e.MS1)(e.MS2)((e.LPref)(e.RPref))((t.L1 e.LHS)(t.R1 e.RHS))
+		= <Split 
+			(e.Result)
+			<CountMS <Include t.L1 (/* EMPTY */)(e.MS1)><Include t.R1 (/* EMPTY */)(e.MS2)>>
+			((e.LPref t.L1)(e.RPref t.R1))
+			((e.LHS)(e.RHS))
+		>;
+  /* 1б. Статус текущего расщепления: некорректное. Делаем попытку следующего расщепления (см. предложение 1а). */
+	(e.Result)'F'(e.MS1)(e.MS2)((e.LPref)(e.RPref))((t.L1 e.LHS)(t.R1 e.RHS))
+		= <Split 
+			(e.Result)
+			<CountMS <Include t.L1 (/* EMPTY */)(e.MS1)><Include t.R1 (/* EMPTY */)(e.MS2)>>
+			((e.LPref t.L1)(e.RPref t.R1))
+			((e.LHS)(e.RHS))
+		>;
+  /* 2. Статус текущего расщепления – корректное. Составляем из префиксов новое уравнение и переходим к анализу оставшейся части исходного уравнения, обнулив расщепление. */
+	(e.Result)'T'(e.MS1)(e.MS2)((e.LPref)(e.RPref))((e.LHS)(e.RHS))
+		= <Split
+			(e.Result ((e.LPref)(e.RPref)))
+			'N'
+			((Const ))((Const ))
+			((/* EMPTY */)(/* EMPTY */))
+			<Sim2 ((e.LHS)(e.RHS))>
+		>;
+  /* 3. Расщеплять было нечего – уравнение пустое. Возвращаем все остальные уравнения. */
+	(e.Result)s.Log(e.MS1)(e.MS2)((/* EMPTY */)(/* EMPTY */))((/* EMPTY */)(/* EMPTY */))
+		= e.Result;
+/* 4. Или в левой, или в правой части уравнения больше не осталось термов: пытаемся расщепить остаток уравнения справа. */
+	(e.Result)s.Log(e.MS1)(e.MS2)((e.LPref)(e.RPref))((e.LHS)(e.RHS))
+		= <SplitRight 
+			(e.Result)
+			'N'((Const ))((Const ))
+			((/* EMPTY */)(/* EMPTY */))
+			<Sim2 ((e.LPref e.LHS)(e.RPref e.RHS))>>;
+}
+
+/* Функция добавления элемента с кратностью 1 в мультимножество. 
+    Входной формат:
+    t.Term (e.SkippedElements)(e.RestOfMultiset),
+    где e.SkippedElements и e.RestOfMultiset – это последовательности элементов вида ((var s.name) e.Number) или (Const e.Number), 
+    причем (Const e.Number) всегда присутствует в e.SkippedElements ++ e.RestOfMultiset – на последнем месте.
+*/
+Include {
+  /* 1. Добавляется буква: увеличиваем счетчик констант, стоящий в мультимножестве всегда последним. */
+	s.Sym (e.Prev)(e.MS (Const e.Counter)) = (e.Prev e.MS (Const e.Counter'I'));
+  /* 1. Добавляется буква: увеличиваем счетчик констант, стоящий в мультимножестве всегда последним. */
+	(var 's' s.name) (e.Prev)(e.MS (Const e.Counter)) = (e.Prev e.MS (Const e.Counter'I'));
+  /* 2. Добавляется очередное вхождение уже присутствующей в мультимножестве e-переменной: увеличиваем соответствующий счетчик. */
+	(var 'e' s.name)(e.Prev)(((var 'e' s.name) e.Counter) e.Rest)
+		= (e.Prev ((var 'e' s.name) e.Counter'I') e.Rest);
+  /* 3. Очередной элемент мультимножества не является счетчиком вхождений данной e-переменной: делаем шаг по мультимножеству. */
+	(var 'e' s.name)(e.Prev)(t.Other e.MS) = <Include (var 'e' s.name)(e.Prev t.Other)(e.MS)>;
+  /* 4. Во всем мультимножестве не нашлось элементов, считающих вхождения данной e-переменной: заводим для нее новый счетчик со значением 1
+  и помещаем его в начало мультимножества. */
+	(var 'e' s.name)(e.Prev)(/* EMPTY */) = (((var 'e' s.name) 'I') e.Prev);
+}
+
+/* Вспомогательная функция проверки равенства двух мультимножеств. 
+    Входной формат: (e.Multiset1)(e.Multiset2), 
+   где e.Multiset1 и e.Multiset2 – последовательности элементов вида ((var s.name) e.Number), за которыми следует единственный элемент вида (Const e.Number).
+*/
+CountMS {
+	(t.1 e.M1) (e.M2) = <AreEqual (e.M1)(<ElMinus t.1 (/* EMPTY */)(e.M2)>)> (t.1 e.M1) (e.M2);
+}
+
+/* Функция проверки двух мультимножеств на равенство (в т.ч. по кратности каждого элемента). 
+    Входной формат: (e.Multiset1)(e.Multiset2 e.Marker), 
+    где e.Multiset1 и e.Multiset2 – пустые слова либо последовательности элементов вида ((var s.name) e.Number), 
+    за которыми следует единственный элемент вида (Const e.Number); e.Marker – пустое слово или терм FALSE. 
+*/
+AreEqual {
+  /* 1. Если второе мультимножество отмечено как заведомо не равное первому – возвращаем 'F'. */
+	(e.M1)(e.M2 FALSE) = 'F';
+  /* 2. Мультимножества оказались поэлементно равными – возвращаем 'T'. */
+	(/* EMPTY */)(/* EMPTY */) = 'T';
+  /* 3a. Первое мультимножество оказалось строгим подмножеством второго – возвращаем 'F'. */
+	(/* EMPTY */)(e.Other) = 'F';
+  /* 3б. Второе мультимножество оказалось строгим подмножеством первого – возвращаем 'F'. */
+	(e.Other)(/* EMPTY */) = 'F';
+  /* 4. В остальных случаях удаляем первый элемент первого мультимножества из второго как из множества. 
+Если оказалось, что этот элемент отсутствует во втором мультимножестве или присутствует с другой кратностью, тогда помечаем второе множество как заведомо неравное первому. */
+	(t.1 e.M1)(e.M2) = <AreEqual (e.M1)(<ElMinus t.1 (/* EMPTY */)(e.M2)>)>;
+	
+}
+
+/* Функция вычитания элемента из мультимножества. Считается выполненной успешно, если данный элемент
+   удален из мультимножества полностью, т.е. кратность вычитаемого элемента совпадает с кратностью его в уменьшаемом множестве. */
+ElMinus {
+  /* 1. Счетчик констант всегда является последним элементом мультимножества, поэтому при вычитании элемента, 
+  считающего константы, достаточно убедиться в совпадении количества вхождений букв и буквенных переменных. */
+	(Const e.Counter) (/* EMPTY */)(e.Rest (Const e.Counter2))
+		= e.Rest <CountMinus Const (e.Counter)(e.Counter2)>;
+/* 2. Если в мультимножестве нашелся счетчик нужной переменной – проверяем совпадение кратностей. */
+	((var 'e' s.name) e.Counter) (e.Rest)(((var 'e' s.name) e.Counter2) e.Next)
+		= e.Rest e.Next <CountMinus (var 'e' s.name)(e.Counter)(e.Counter2)>;
+/* 3. Пробегаем очередной элемент мультимножества, не являющийся искомым счетчиком. */
+	t.El (e.Rest)(t.Other e.Next)
+		= <ElMinus t.El (e.Rest t.Other)(e.Next)>;
+/* 4. Искомого счетчика не нашлось – возвращаем все просмотренное мультимножество и флаг FALSE с
+указанием на то, что в мультимножестве не оказалось элемента с нужной кратностью. */
+	t.El (e.Rest)(/* EMPTY */) = e.Rest GREATER FALSE;
+}
+
+/* Функция проверки на равенство двух унарных чисел. В случае успеха возвращает пустое слово. 
+В случае неудачи – константу FALSE с указанием знака сравнения чисел. */
+CountMinus {
+	t.Name (/* EMPTY */)(/* EMPTY */) = /* EMPTY */;
+	t.Name (s.C e.Other)(s.C e.Other2) = <CountMinus t.Name (e.Other)(e.Other2)>;
+	t.Name (/* EMPTY */)(e.Number) = LESSER FALSE;
+	t.Name (e.Number)(/* EMPTY */) = GREATER FALSE;
+}
+
+/*********************************************************************************************************************/
+/*                             Добавочные функции интерпретатора Int-Split-Sym                                       */
+/*********************************************************************************************************************/
+
+SplitRight {
+  /* 1а. Статус расщепления не определен, но осталось еще хотя бы по одному терму слева и справа в уравнении. 
+  Присоединяем соответствующие термы слева к префиксам и включаем их в мультимножества элементов префиксов. 
+  После чего проверяем эти мультимножества на совпадение. Вызываем функцию CountMS. */
+  (e.Result)'N'(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS t.LL)(e.RHS t.RL))
+	= <SplitRight 
+		(e.Result)
+		<CountMS 
+			<Include t.LL (/* EMPTY */)(e.MS1)>
+			<Include t.RL (/* EMPTY */)(e.MS2)>
+		>
+		((t.LL e.LSuff)(t.RL e.RSuff))
+		((e.LHS)(e.RHS))
+	>;
+/* 1б. Статус текущего расщепления: некорректное. Делаем попытку следующего расщепления (см. предложение 1а). */
+  (e.Result)'F'(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS t.LL)(e.RHS t.RL))
+	= <SplitRight 
+		(e.Result)
+		<CountMS 
+			<Include t.LL (/* EMPTY */)(e.MS1)>
+			<Include t.RL (/* EMPTY */)(e.MS2)>
+		>
+		((t.LL e.LSuff)(t.RL e.RSuff))
+		((e.LHS)(e.RHS))
+	>;
+/* 2. Статус текущего расщепления: корректное. Составляем из суффиксов новое уравнение и переходим к анализу оставшейся части исходного уравнения, 
+обнулив расщепление. */
+  (e.Result)'T'(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS)(e.RHS))
+	= <SplitRight
+		(e.Result ((e.LSuff)(e.RSuff)))
+		'N'
+		((Const ))((Const ))
+		((/* EMPTY */)(/* EMPTY */))
+		<Sim2 ((e.LHS)(e.RHS))>
+	>;
+/* 3. Расщеплять было нечего – уравнение пустое. Возвращаем все остальные уравнения системы. */
+  (e.Result)s.Log(e.MS1)(e.MS2)((/* EMPTY */)(/* EMPTY */))((/* EMPTY */)(/* EMPTY */))
+		= e.Result;
+/* 4. Или в левой, или в правой части уравнения больше не осталось термов – помещаем остаток уравнения в итоговую систему уравнений самым первым 
+и проверяем, не является ли он противоречивым по кратности переменных. */
+  (e.Result)s.Log(e.MS1)(e.MS2)((e.LSuff)(e.RSuff))((e.LHS)(e.RHS))
+	= <YieldPowerCheck 
+		<Sim2 ((e.LHS e.LSuff)(e.RHS e.RSuff))>
+			(<AddElsToMS (e.LHS)(e.MS1)>)
+			(<AddElsToMS (e.RHS)(e.MS2)>)
+	> 
+	e.Result;
+}
+
+/* Функция вывода результата анализа уравнения на противоречивость по кратности. Если уравнение оказывается противоречиво (правило 2), 
+  тогда оно заменяется на тривиально противоречивое уравнение. */
+SubjugateEq {
+	False ((e.Eq1)(e.Eq2)) = ((e.Eq1)(e.Eq2));
+	True ((e.Eq1)(e.Eq2)) = (('A')('B'));
+}
+
+/* Решение задачи: 
+    существует ли разность мультимножеств e.MS1 и e.MS2. Разность ищется как разность именно мультимножеств, 
+     т. е. с учетом     кратности элементов. 
+     Входной формат: s.Flag (e.MultiSet1)(e.MultiSet2). */
+SubtractMS {
+  /* 1. Если первое мультимножество включало элементы второго, и второе исчерпано, тогда разность существует. */
+	GREATER (e.MS1)(/* EMPTY */) = True;
+  /* 2. Если второе мультимножество включало элементы первого, и первое исчерпано, тогда разность существует. */
+	LESSER (/* EMPTY */)(e.MS2) = True;
+  /* 3а, б. Если флаг сравнения мультимножеств однозначный, и ни одно из них не исчерпано, запускаем итерацию проверки вхождения во второе 
+  множество очередного элемента первого. */
+	GREATER (t.El e.MS1)(e.MS2) = <CheckInfo GREATER (<ElMinus t.El (/* EMPTY */)(e.MS2)>)(e.MS1)>;
+	LESSER (t.El e.MS1)(e.MS2) = <CheckInfo LESSER (<ElMinus t.El (/* EMPTY */)(e.MS2)>)(e.MS1)>;
+  /* 4. Если флаг сравнения мультимножеств иной (несравнимы), возвращаем False. */
+	t.Other (e.MS1)(e.MS2) = False;
+}
+
+/* Функция анализа результата проверки элемента мультимножества на включение – в контексте предыдущего сравнения мультимножеств. */
+CheckInfo {
+  /* 1. Если нехватка/избыток вхождений элемента в мультимножество согласуется с предыдущим анализом, тогда  продолжаем поиск разности 
+  мультимножеств. */
+	s.Log (e.MS2 s.Log FALSE)(e.MS1) = <SubtractMS s.Log (e.MS1)(e.MS2)>;
+  /* 2а,б. Если результат анализа данного элемента мультимножества противоположен результату предыдущего анализа, тогда  
+  возвращаем флаг несравнимости мультимножеств. */
+	GREATER (e.MS2 LESSER FALSE)(e.MS1) = <SubtractMS NONCOMP (e.MS1)(e.MS2)>;
+	LESSER (e.MS2 GREATER FALSE)(e.MS1) = <SubtractMS NONCOMP (e.MS1)(e.MS2)>;
+  /* 3. Если данный элемент первого мультимножества в точности (с учетом кратности) повторяет элемент второго мультимножества, 
+  тогда продолжаем анализ независимо от предыдущих результатов. */
+	s.Marker (e.MS2)(e.MS1) = <SubtractMS s.Marker (e.MS1)(e.MS2)>;
+}
+
+/* Анализ результата сравнения счетчиков букв в мультимножествах. Этот шаг является выделенным, поскольку от него зависит, удастся ли 
+  получить информацию о противоречивости уравнения. */
+YieldCheckSubMS2 {
+  /* 1. Если счетчики букв в двух мультимножествах совпадают, дальнейший анализ не может показать противоречивость уравнения. */
+	/* EMPTY */ (e.MS1)(e.MS2) = False;
+  /* 2. В противном случае проверяем, сопровождается ли избыток букв в одной из частей уравнения избытком вхождений переменных. */
+	s.Cmp FALSE (e.MS1)(e.MS2) = <SubtractMS s.Cmp (e.MS1)(e.MS2)>;
+}
+
+/* Вспомогательная функция, выделяющая первый шаг анализа мультимножеств термов частей уравнения: 
+  анализ количества констант в мультимножествах. */
+YieldCheckSubMS {
+	(e.MS1 t.Const1)(e.MS2 t.Const2)
+		= <YieldCheckSubMS2 <ElMinus t.Const1 (/* EMPTY */)(t.Const2)>(e.MS1)(e.MS2)>;
+}
+
+/* Функция, добавляющая последовательность элементов (как термов кратности 1) в мультимножество. */
+AddElsToMS {
+	(t.El e.Other)(e.MS) = <AddElsToMS (e.Other) <Include t.El(/* EMPTY */)(e.MS)>>;
+	(/* EMPTY */)(e.MS) = e.MS;
+}
+
+YieldPowerCheck {
+	((e.LHS)(e.RHS))(e.MS1)(e.MS2)
+		= <AnalyzeMSDiff <SetInters (e.MS1)(e.MS2)(/* EMPTY */)(/* EMPTY */)(/* EMPTY */)>((e.LHS)(e.RHS))>;
+}
+
+SetInters {
+	(((var 'e' s.name) e.Num1) e.MS1)(((var 'e' s.name) e.Num2) e.MS2)(e.Res1)(e.Res2)(e.ProcMS2)
+		= <CountDiff (var 'e' s.name)(e.Num1)(e.Num2)(e.MS1)(e.ProcMS2 e.MS2)(e.Res1)(e.Res2)>;
+	((Const e.Num1))((Const e.Num2))(e.Res1)(e.Res2)(e.ProcMS2)
+		= <CountDiff Const(e.Num1)(e.Num2)( )(e.ProcMS2)(e.Res1)(e.Res2)>;
+	(/* EMPTY */)(e.MS2)(e.Res1)(e.Res2)(e.Res22)
+		= (e.Res1)(e.Res2 e.Res22 e.MS2);
+	(t.Term e.MS1)(/* EMPTY */)(e.Res1)(e.Res2)(e.ProcMS2)
+		= <SetInters (e.MS1)(e.ProcMS2)(e.Res1 t.Term)(e.Res2)()>;
+	(t.Term e.MS1)(t.OtherTerm e.MS2)(e.Res1)(e.Res2)(e.ProcMS2)
+		= <SetInters (t.Term e.MS1)(e.MS2)(e.Res1)(e.Res2)(e.ProcMS2 t.OtherTerm)>;
+}
+
+CountDiff {
+	t.VarName(/* EMPTY */)(/* EMPTY */)(e.MS1)(e.MS2)(e.Res1)(e.Res2) = <SetInters (e.MS1)(e.MS2)(e.Res1)(e.Res2)(/* EMPTY */)>;
+	t.VarName(e.Num)(/* EMPTY */)(e.MS1)(e.MS2)(e.Res1)(e.Res2) = <SetInters (e.MS1)(e.MS2)(e.Res1 (t.VarName e.Num))(e.Res2)(/* EMPTY */)>;
+	t.VarName(/* EMPTY */)(e.Num)(e.MS1)(e.MS2)(e.Res1)(e.Res2) = <SetInters (e.MS1)(e.MS2)(e.Res1)(e.Res2 (t.VarName e.Num))(/* EMPTY */)>;
+	t.VarName('I'e.Num1)('I'e.Num2)(e.MS1)(e.MS2)(e.Res1)(e.Res2) = <CountDiff t.VarName(e.Num1)(e.Num2)(e.MS1)(e.MS2)(e.Res1)(e.Res2)>;
+}
+
+AnalyzeMSDiff {
+	(/* EMPTY */)(e.x (Const e.Num))((e.LHS)(e.RHS)) = (assign contradiction);
+	(e.x (Const e.Num))(/* EMPTY */)((e.LHS)(e.RHS)) = (assign contradiction);
+	(/* EMPTY */)(((var 'e' t.name) e.Num) e.Other)((e.LHS)(e.RHS)) = (assign (var 'e' t.name)(/* EMPTY */))<AnalyzeMSDiff (/* EMPTY */)(e.Other)((e.LHS)(e.RHS))>;
+	(((var 'e' t.name) e.Num) e.Other)(/* EMPTY */)((e.LHS)(e.RHS)) = (assign (var 'e' t.name)(/* EMPTY */))<AnalyzeMSDiff (/* EMPTY */)(e.Other)((e.LHS)(e.RHS))>;
+	(/* EMPTY */)(/* EMPTY */)((e.LHS)(e.RHS)) = ((e.LHS)(e.RHS));
+	((Const e.Num1))(((var 'e' t.name) e.Num2))((e.LHS)(e.RHS)) = <CheckDivis Init (var 'e' t.name)(e.Num1)(e.Num2)>((e.LHS)(e.RHS));
+	(((var 'e' t.name) e.Num2))((Const e.Num1))((e.LHS)(e.RHS)) = <CheckDivis Init (var 'e' t.name)(e.Num1)(e.Num2)>((e.LHS)(e.RHS));
+	(((var 'e' s.name) e.Num))(e.MS)((e.LHS (var 'e' s.name))(e.RHS t.Last)) = <CheckEndTerms (((var 'e' s.name) e.Num))(e.MS)t.Last>((e.LHS (var 'e' s.name))(e.RHS t.Last));
+	(e.MS)(((var 'e' s.name) e.Num))((e.LHS t.Last)(e.RHS (var 'e' s.name))) = <CheckEndTerms (((var 'e' s.name) e.Num))(e.MS)t.Last>((e.LHS t.Last)(e.RHS (var 'e' s.name)));
+	(e.Rest1)(e.Rest2)((e.LHS)(e.RHS)) = ((e.LHS)(e.RHS));
+}
+
+CheckEndTerms {
+	((t.Var e.Num))((Const e.Num2) e.MS2) s.Sym = <CreateEndAsg (<UnaryMinus (e.Num2)e.Num>)t.Var s.Sym>;
+	((t.Var e.Num))((Const e.Num2) e.MS2) (var 's' s.name) = <CreateEndAsg (<UnaryMinus (e.Num2)e.Num>)t.Var (var 's' s.name)>;
+	((t.Var e.Num))(((var 'e' s.name) e.Num2) e.MS2) (var 'e' s.name) = <CreateEndAsg (<UnaryMinus (e.Num2)e.Num>)t.Var (var 'e' s.name)>;
+	(e.MS1)(t.x e.MS2)t.Term = <CheckEndTerms (e.MS1)(e.MS2)t.Term>;
+	(e.MS1)(/* EMPTY */)t.Term = /* EMPTY */;
+}
+
+CreateEndAsg {
+	(ERROR)t.Var t.Term = /* EMPTY */;
+	(e.Nat)t.Var t.Term = (assign t.Var (t.Var t.Term));
+}
+
+CheckDivis {
+	Init t.var (e.Num1)('I') = (assign t.var (e.Num1));
+	Init t.var (e.Num1)(e.Num2) = <CheckDivis Started t.var (<UnaryMinus (e.Num1) e.Num2>)(e.Num2)()>;
+	Started t.var (/* EMPTY */)(e.Num2)(e.Count) = (assign t.var ('I' e.Count));
+	Started t.var (ERROR)(e.Num2)(e.Count) = (assign contradiction);
+	Started t.var (e.Num1)(e.Num2)(e.Count) = <CheckDivis Started t.var (<UnaryMinus (e.Num1)e.Num2>)(e.Num2)('I'e.Count)>;
+}
+
+UnaryMinus {
+	(e.1)/* EMPTY */ = e.1;
+	(/* EMPTY */)e.1 = ERROR;
+	('I'e.1)'I'e.2 = <UnaryMinus (e.1)e.2>;
+}
+
+CreateNewAsg {
+	t.var s.Element (e.Num)
+		= (assign t.var (<CreateNewAsg Started (<FindSuffix (<Variables>)s.Element>)(e.Num)>));
+	Started (s.Name e.RestNames)('I' e.RestNum) = (var 's' s.Name)<CreateNewAsg Started (e.RestNames)(e.RestNum)>;
+	Started (s.Name e.RestNames)(/* EMPTY */) = (s.Name);
+}
+
+NextVar {
+	(s.x s.y e.Z) s.x = s.y;
+	(s.y e.Z) s.x = <NextVar (e.Z) s.x>;
+}
+
+FindSuffix {
+	(s.x e.Other) s.x = s.x e.Other;
+	(s.x e.Other) s.y = <FindSuffix (e.Other) s.y>;
+}

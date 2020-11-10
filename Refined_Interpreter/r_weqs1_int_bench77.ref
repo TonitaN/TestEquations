@@ -1,0 +1,826 @@
+
+*$MST_FROM_ENTRY;
+
+*$MATCHING ForRepeatedSpecialization ;
+
+*$STRATEGY Applicative ;
+/*
+$ENTRY Go {
+ = <Prout <Go e.1 >> ;
+}
+*/
+
+***
+/*
+*  InputFormat: <Go e.41 >
+*  OutputFormat: ==> e.0 
+*/
+
+
+$ENTRY Go {
+ ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Cs -> Fs Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> empty') e.41 =  False
+               ;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> empty')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Cs -> Fs Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Cs -> Fs Cs') e.41 =  False;
+ ('Cs -> b Cs')
+      ('Cs -> a Cs')
+      ('Fs -> Cs Fs')
+      ('Fs -> a Fs')
+      ('Fs -> a Fs')
+      ('Fs -> a Fs')
+      ('Fs -> b Fs')
+      ('Fs -> a Fs')
+      ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs')
+      ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs')
+      ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs')
+      ('Cs -> a Cs')
+      ('Fs -> Cs Fs')
+      ('Fs -> a Fs')
+      ('Fs -> a Fs')
+      ('Fs -> a Fs')
+      ('Fs -> b Fs')
+      ('Fs -> a Fs')
+      ('Fs -> b Fs')
+      ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs')
+      ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs')
+      ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs')
+      ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty')
+      ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b')
+      ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') ('4 -> b') ('9 -> b') ('5 -> a') ('8 -> b') ('6 -> a') ('7 -> b') =  True;
+ ('Cs -> b Cs')
+      ('Cs -> a Cs')
+      ('Fs -> Cs Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs')
+      ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty')
+      ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a')
+      ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') ('4 -> b') ('9 -> b') ('5 -> a') ('8 -> b') ('6 -> a') ('7 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs')
+      ('Fs -> Cs Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs')
+      ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs')
+      ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a')
+      ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a')
+      ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') ('4 -> b') ('9 -> b') ('5 -> a') ('8 -> b') ('6 -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs')
+      ('Fs -> Cs Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs')
+      ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs')
+      ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b')
+      ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') ('4 -> b') ('9 -> b') ('5 -> a') ('8 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs')
+      ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs')
+      ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs')
+      ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a')
+      ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') ('4 -> b') ('9 -> b') ('5 -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs')
+      ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a')
+      ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a')
+      ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') ('4 -> b') ('9 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs')
+      ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a')
+      ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a')
+      ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') ('4 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs')
+      ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a')
+      ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') ('0 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs')
+      ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a')
+      ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') ('3 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs')
+      ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b')
+      ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a')
+      ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') ('+ -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b')
+      ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') ('2 -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs')
+      ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a')
+      ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') ('! -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs')
+      ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs')
+      ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a')
+      ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b') ('1 -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b')
+      ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') ('@ -> b')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b')
+      ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') ('M -> a') e.41 =  False
+               ;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs')
+      ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b')
+      ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') ('# -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b')
+      ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') ('N -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a')
+      ('^ -> a') ('V -> a') ('% -> b') ('B -> b') ('$ -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a')
+      ('V -> a') ('% -> b') ('B -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a')
+      ('V -> a') ('% -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b')
+      ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') ('V -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs')
+      ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b')
+      ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') ('^ -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs')
+      ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a')
+      ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') ('C -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs')
+      ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs')
+      ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a')
+      ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') ('X -> a') ('& -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs')
+      ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b')
+      ('Z -> a') ('? -> a') ('X -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs')
+      ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') ('? -> a') e.41 =  False
+               ;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs')
+      ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') ('Z -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs')
+      ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') ('\xC9 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs')
+      ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs')
+      ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b')
+      ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') ('L -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs')
+      ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b')
+      ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') ('\xD6 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a')
+      ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') ('K -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a')
+      ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty') ('J -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs')
+      ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> empty')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a')
+      ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a')
+      ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs')
+      ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b')
+      ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs')
+      ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs')
+      ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b')
+      ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs')
+      ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs')
+      ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs')
+      ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> empty')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs')
+      ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs')
+      ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs')
+      ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs')
+      ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs')
+      ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs')
+      ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a')
+      ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs')
+      ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b')
+      ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b')
+      ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs')
+      ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs')
+      ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs')
+      ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') ('Cs -> 6 Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs')
+      ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') ('Cs -> 6 Cs') ('Cs -> 7 Cs') ('Cs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs')
+      ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b')
+      ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') ('Cs -> 6 Cs') ('Cs -> 7 Cs') ('Cs -> 8 Cs') ('8 -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs')
+      ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') ('Cs -> 6 Cs') ('Cs -> 7 Cs') ('Cs -> 8 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs')
+      ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') ('Cs -> 6 Cs') ('Cs -> 7 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs')
+      ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') ('Cs -> 6 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs')
+      ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs')
+      ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') ('Cs -> 5 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b')
+      ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') ('Cs -> 4 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs')
+      ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b')
+      ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') ('Cs -> 3 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs')
+      ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a')
+      ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') ('Cs -> 2 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs')
+      ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs')
+      ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs')
+      ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') ('Cs -> 1 Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs')
+      ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs')
+      ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs') ('Cs -> M Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs')
+      ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') ('Cs -> N Cs')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs')
+      ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') ('Cs -> B Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs')
+      ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs')
+      ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') ('Cs -> V Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs')
+      ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs')
+      ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b')
+      ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') ('Cs -> C Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs')
+      ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b')
+      ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') ('Cs -> X Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a')
+      ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') ('Cs -> Z Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs')
+      ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a')
+      ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs') ('Cs -> L Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs')
+      ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') ('Cs -> K Cs')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') ('Cs -> J Cs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') ('Q -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs')
+      ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') ('W -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs')
+      ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') ('E -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs')
+      ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs')
+      ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') ('R -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs')
+      ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs')
+      ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') ('T -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs')
+      ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs')
+      ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') ('Y -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs')
+      ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a')
+      ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') ('U -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs')
+      ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs')
+      ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a')
+      ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') ('I -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs')
+      ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b')
+      ('D -> b') ('S -> a') ('A -> b') ('P -> a') ('O -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs')
+      ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b')
+      ('P -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs')
+      ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs')
+      ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') ('A -> b')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs')
+      ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') ('S -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs')
+      ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') ('D -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs')
+      ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') ('F -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs')
+      ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs')
+      ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') ('G -> b') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') ('H -> a') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs')
+      ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') ('Fs -> empty') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs')
+      ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs')
+      ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') ('Fs -> \xD6 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs')
+      ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs')
+      ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') ('Fs -> \xC9 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') ('Fs -> ? Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs')
+      ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs')
+      ('Fs -> # Fs') ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') ('Fs -> & Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs')
+      ('Fs -> $ Fs') ('Fs -> % Fs') ('Fs -> ^ Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs')
+      ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs')
+      ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs')
+      ('Fs -> % Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs')
+      ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') ('Fs -> $ Fs') e.41 =  False
+               ;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs')
+      ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') ('Fs -> # Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs')
+      ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') ('Fs -> @ Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs')
+      ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs')
+      ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') ('Fs -> ! Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') ('Fs -> + Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') ('Fs -> 0 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') ('Fs -> 9 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs')
+      ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs')
+      ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') ('Fs -> 8 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs')
+      ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') ('Fs -> 7 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs')
+      ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') ('Fs -> 6 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs')
+      ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') ('Fs -> 5 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs')
+      ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs')
+      ('Fs -> N Fs') ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') ('Fs -> 4 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') ('Fs -> 3 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs')
+      ('Fs -> M Fs') ('Fs -> 1 Fs') ('Fs -> 2 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs')
+      ('Fs -> 1 Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs')
+      ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') ('Fs -> M Fs')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') ('Fs -> N Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') ('Fs -> B Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') ('Fs -> V Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs')
+      ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') ('Fs -> C Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') ('Fs -> X Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') ('Fs -> Z Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') ('Fs -> L Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs')
+      ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') ('Fs -> K Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') ('Fs -> J Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') ('Fs -> H Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') ('Fs -> G Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs')
+      ('Fs -> Y Fs') ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') ('Fs -> F Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs')
+      ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') ('Fs -> D Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs')
+      ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') ('Fs -> S Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs')
+      ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') ('Fs -> A Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs')
+      ('Fs -> U Fs') ('Fs -> I Fs') ('Fs -> O Fs') ('Fs -> P Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      ('Fs -> I Fs') ('Fs -> O Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      ('Fs -> I Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') ('Fs -> U Fs')
+      e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') ('Fs -> Y Fs') e.41 =  False
+               ;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') ('Fs -> T Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') ('Fs -> R Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') ('Fs -> E Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') ('Fs -> W Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> Q Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> b Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') ('Fs -> b Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') ('Fs -> b Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> Cs Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') ('Fs -> a Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> b Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') ('Fs -> b Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') ('Fs -> a Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> b Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') ('Fs -> a Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') ('Fs -> a Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') ('Fs -> a Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') ('Fs -> Cs Fs') e.41 =  False;
+ ('Cs -> b Cs') ('Cs -> a Cs') e.41 =  False;
+ ('Cs -> b Cs') e.41 =  False;
+ e.41 =  False;
+}
+
+****************************** The End ************************************
